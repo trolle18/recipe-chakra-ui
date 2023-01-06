@@ -1,4 +1,5 @@
 import Nav from '../components/Nav';
+import Hero from '../components/Hero';
 import Vegetarian from "../components/Vegetarian";
 import Popular from "../components/Popular";
 import { motion } from "framer-motion";
@@ -7,7 +8,8 @@ import { motion } from "framer-motion";
 export function HomePage() {
   return (
     <>
-      <Nav />
+      {/* <Nav /> */}
+      <Hero/>
       <section className="page homepage">                
         <motion.div 
           animate={ {opacity: 1} }
