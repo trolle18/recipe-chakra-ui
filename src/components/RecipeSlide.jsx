@@ -3,6 +3,7 @@ import { Link } from "react-router-dom";
 import '@splidejs/react-splide/css';
 import { IoTimerOutline } from "react-icons/io5";
 import FavoriteBtn from "./FavoriteBtn";
+import { Container, Flex, Heading, VStack } from "@chakra-ui/react";
 
 
 export default function RecipeSlide( {recipe} ) {
@@ -29,27 +30,28 @@ export default function RecipeSlide( {recipe} ) {
 
   return (
     <>
-      <article className="recipe-slide">
-        <div className="recipe-slide__content">    
-        
-          <FavoriteBtn recipe={recipe}/>
+      <Container>
+        <Flex 
+        flexDir={'column'}
+        >    
           <div className="img-cntr">
             <img src={recipe.image} alt={recipe.title}/>
           </div>             
-
+          <FavoriteBtn recipe={recipe}/>
           <Link to={'/recipe/'+ recipe.id}>      
-            <div className="slide-text">
-              <h4>{recipe.title}</h4>
-              <div className="slide-text-details">
+            <Flex flexDir={'column'}
+            >
+              <Heading as={'h4'} fontWeight={'medium'}>{recipe.title}</Heading>
+              <Flex flexDir={'column'} >
                 {CheckReady()}
                 {CheckServings()}
                 {CheckDiets()}
-              </div>                           
-            </div>
+              </Flex>                           
+            </Flex>
           </Link> 
 
-        </div>              
-      </article>
+        </Flex>              
+      </Container>
     </>
   )
 };

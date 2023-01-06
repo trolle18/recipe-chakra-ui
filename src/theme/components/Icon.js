@@ -4,9 +4,13 @@ export const iconStyles = {
   // components: {
   //   Icon: {
       sizes: {
-        md: {
-          width: "1em",
+        sm: {
           height: "1em",
+          width: "auto",
+        },
+        md: {
+          height: "2em",
+          width: "auto",
         }
       },
       
@@ -23,7 +27,12 @@ export const iconStyles = {
         },
         redOrange: {
           color: 'redOrange',
-        }
+        },
+        small: {
+          height: "1.5em",
+          width: "auto",
+        },
+       
       }
   //   }
   // }
