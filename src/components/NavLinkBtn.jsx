@@ -14,7 +14,7 @@ function NavLinkBtn(props)  {
 	const navLinkBtnStyles = useMultiStyleConfig('navLinkBtnStyles', {variant});
 
 	return (
-		<Flex __css={navLinkBtnStyles} {...rest} variant='primary'>
+		<Flex __css={navLinkBtnStyles} {...rest}>
 		</Flex>
 	)
 };

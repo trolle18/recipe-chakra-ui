@@ -7,41 +7,41 @@ import NavLinkBtn from './NavLinkBtn';
 
 export default function Categories() {
 
-  
+
   return (
     <>
-      <NavLinkBtn variant="black">
+      <NavLinkBtn variant="blackRound">
         <NavLink to={'/cuisine/italian'} >
           <VStack>
-            <Icon as={FaPizzaSlice}  color='white' />
+            <Icon as={FaPizzaSlice}  color='white' h='1.5em' w='1.5em'/>
             <Text color='white'>Italian</Text>
           </VStack>
         </NavLink>
       </NavLinkBtn>
 
-      <NavLinkBtn  variant="black">
+      <NavLinkBtn  variant="blackRound">
         <NavLink to={'/cuisine/american'} >
           <VStack>
-            <Icon as={FaHamburger}  color='white' />
+            <Icon as={FaHamburger}  color='white' h='1.5em' w='1.5em' />
             <Text color='white'>American</Text>
           </VStack>
         </NavLink>
       </NavLinkBtn>   
 
-      <NavLinkBtn variant="black">
+      <NavLinkBtn variant="blackRound">
         <NavLink to={'/cuisine/thai'} >
           <VStack>
-            <Icon as={GiNoodles}  color='white' />
+            <Icon as={GiNoodles}  color='white' h='1.5em' w='1.5em'/>
             <Text color='white'>Thai</Text>
           </VStack>
         </NavLink>
       </NavLinkBtn>   
       
-      <NavLinkBtn variant="black">
+      <NavLinkBtn variant="blackRound">
         <NavLink to={'/cuisine/japanese'} >
-          <VStack>
-            <Icon as={GiSushis}  color='white' />
-            <Text color='white'>Japanese</Text>
+          <VStack gap={0} justifyContent='center'>
+            <Icon as={GiSushis}  color='white' h='auto' w='1.5rem'/>
+            <Text fontSize='1rem' margin='0' padding='0' color='white'>Japanese</Text>
           </VStack>
         </NavLink>
       </NavLinkBtn>   

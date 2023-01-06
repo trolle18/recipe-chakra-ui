@@ -2,19 +2,11 @@ import { mode } from "@chakra-ui/theme-tools";
 
 
 export const navLinkBtnStyles = {
-  // components: {
-  //   NavLinkBtn: {
+
       baseStyle: {
-        // width: '4rem',
-        // height: '4rem',
-        // padding: '.1em',
         display: 'flex',
-        // flexDirection: 'column',
         justifyContent: 'center',
         alignItems: 'center',
-        // borderRadius: '50%',
-        // bg: '#000',
-        // color: 'white',
         fontSize: '.6rem',
         cursor: 'pointer',
         textAlign: 'center',
@@ -32,9 +24,26 @@ export const navLinkBtnStyles = {
         },
 
         black: {
-          width: '4rem',
-          height: '4rem',
-          padding: '.1em',
+          flexDirection: 'column',
+          borderRadius: '50%',
+          color: "#000",
+          _hover: { bg: "brand.redOrange" },
+          _focus: { bg: "brand.redOrange" },
+          _active: { bg: "brand.redOrange" },
+        },
+        white: {
+          flexDirection: 'column',
+          borderRadius: '50%',
+          color: "#fff",
+          _hover: { bg: "brand.redOrange" },
+          _focus: { bg: "brand.redOrange" },
+          _active: { bg: "brand.redOrange" },
+        },
+
+        blackRound: {
+          width: '5em',
+          height: '5em',
+          padding: '.2em',
           flexDirection: 'column',
           borderRadius: '50%',
           bg: "#000",
@@ -43,7 +52,7 @@ export const navLinkBtnStyles = {
           _focus: { bg: "brand.redOrange" },
           _active: { bg: "brand.redOrange" },
         },
-        white: {
+        whiteRound: {
           width: '4rem',
           height: '4rem',
           padding: '.1em',
@@ -73,22 +82,5 @@ export const navLinkBtnStyles = {
         //   _active: { bg: mode("blue.50", "transparent")(props) },
         // }),
 
-        // dark: (props) => ({
-        //   color: "white",
-        //   bg: mode("gray.700", "blue.500")(props),
-        //   fontSize: "10px",
-        //   _hover: { bg: mode("gray.700", "blue.500")(props) },
-        //   _focus: { bg: mode("gray.700", "blue.600")(props) },
-        //   _active: { bg: mode("gray.700", "blue.400")(props) },
-        // }),
-
-        // light: (props) => ({
-        //   color: mode("gray.700", "gray.700")(props),
-        //   bg: mode("gray.100", "white")(props),
-        //   fontSize: "10px",
-        //   _hover: { bg: mode("gray.50", "white")(props) },
-        //   _focus: { bg: mode("gray.50", "white")(props) },
-        //   _active: { bg: mode("gray.50", "white")(props) },
-        // }),
       },
 };

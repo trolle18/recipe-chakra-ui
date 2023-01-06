@@ -5,15 +5,16 @@ import { GiKnifeFork } from "react-icons/gi";
 import { IoHeart } from "react-icons/io5";
 import { Heading, HStack, Icon, Text, VStack, Flex } from "@chakra-ui/react";
 import { useEffect, useState } from "react";
+import NavLinkBtn from "./NavLinkBtn";
 
 
 export default function Nav() {
 
   return (
     <>
-      <VStack className="nav-cntr">       
+      <VStack>
         <Flex>
-          <Link  to={'/'} className="nav-cntr__logo">
+          <Link  to={'/'}>
             <HStack>
               <Icon as={GiKnifeFork}  color='white' h='2rem' w='2rem' />
               <Heading as='h1' color='white'>Recipes</Heading>
@@ -21,20 +22,20 @@ export default function Nav() {
           </Link>
         </Flex>
 
-        <VStack className="nav-cntr__navigation">
+        <VStack>
           <Search/>
           <HStack >
             <Categories/>
           </HStack>
 
-          <Flex className='categories'>
-            <NavLink className="fav-btn cat-sub-link"  to={'/favorites'} >
+          <NavLinkBtn variant='white' alignSelf='flex-start' left='0'>
+            <NavLink to={'/favorites'} >
               <HStack>
-                <Icon as={IoHeart}  color='white' />
-                <Text color='white'>Favorites</Text>
+                <Icon as={IoHeart} h='1em' w='1em' />
+                <Text>Favorites</Text>
               </HStack>
             </NavLink>
-          </Flex>
+          </NavLinkBtn>
         </VStack>      
             
       </VStack>
