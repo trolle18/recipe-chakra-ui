@@ -3,36 +3,42 @@ import Categories from "./Categories";
 import Search from "./Search";
 import { GiKnifeFork } from "react-icons/gi";
 import { IoHeart } from "react-icons/io5";
+import { Heading, HStack, Icon, Text, VStack, Flex } from "@chakra-ui/react";
+import { useEffect, useState } from "react";
 
 
 export default function Nav() {
+
   return (
     <>
-      <div className="hero-cntr">
-        <div className="hero-cntr__img"></div>
-      </div>
+      <VStack className="nav-cntr">       
+        <Flex>
+          <Link  to={'/'} className="nav-cntr__logo">
+            <HStack>
+              <Icon as={GiKnifeFork}  color='white' h='2rem' w='2rem' />
+              <Heading as='h1' color='white'>Recipes</Heading>
+            </HStack>          
+          </Link>
+        </Flex>
 
-      <section className="nav-cntr">
-        <Link to={"/"} className="nav-cntr__logo">
-          <GiKnifeFork/>
-          <h1>Recipes</h1>
-        </Link>
-
-        <div className="nav-cntr__navigation">
+        <VStack className="nav-cntr__navigation">
           <Search/>
-          <section className='categories'>
+          <HStack >
             <Categories/>
-          </section>
+          </HStack>
 
-          <section className='categories'>
+          <Flex className='categories'>
             <NavLink className="fav-btn cat-sub-link"  to={'/favorites'} >
-              <IoHeart/>
-              <span>Favorites</span>
+              <HStack>
+                <Icon as={IoHeart}  color='white' />
+                <Text color='white'>Favorites</Text>
+              </HStack>
             </NavLink>
-          </section>          
-        </div>      
+          </Flex>
+        </VStack>      
             
-      </section>    
+      </VStack>
+    
     </>
   );
 };

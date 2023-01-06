@@ -45,6 +45,10 @@ export const colors = {
       700: "#1c0377",
       800: "#130156",
       900: "#0e0042",
+      orange:" #e8812d", /* #ffa962; */
+      redOrange: "#d64b21",
+      blue: "#4c54aa",
+      green: "#508d46",
     },
   },
 }
