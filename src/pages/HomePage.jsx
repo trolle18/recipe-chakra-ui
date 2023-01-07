@@ -3,14 +3,14 @@ import Hero from '../components/Hero';
 import Vegetarian from "../components/Vegetarian";
 import Popular from "../components/Popular";
 import { motion } from "framer-motion";
+import SectionCntr from '../components/SectionCntr';
 
 
 export function HomePage() {
   return (
     <>
-      {/* <Nav /> */}
       <Hero/>
-      <section className="page homepage">                
+      <SectionCntr>                
         <motion.div 
           animate={ {opacity: 1} }
           initial={ {opacity: 0} }
@@ -24,7 +24,7 @@ export function HomePage() {
             <h1>article</h1>
             <Favorites /> 
         </section> */}
-      </section>
+      </SectionCntr>
     </>
   )
 }
