@@ -47,7 +47,7 @@ export default function RecipeSlide( {recipe} ) {
           <Link to={'/recipe/'+ recipe.id} >
             <Flex p={'.5em'} flexDir={'column'} gap={'.25em'}>
               <Flex 
-              minH={'3.5rem'}
+              // minH={'3.5rem'}
               w={'full'}
               >
                 <Heading as={'h4'} fontWeight={'medium'} fontSize={'1.25rem'} >

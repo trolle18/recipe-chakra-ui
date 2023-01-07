@@ -1,4 +1,3 @@
-import Nav from '../components/Nav';
 import Hero from '../components/Hero';
 import Vegetarian from "../components/Vegetarian";
 import Popular from "../components/Popular";
@@ -14,7 +13,7 @@ export function HomePage() {
       <Flex
       h={'100%'}
       w={'100%'}
-      m={'1em 0em'}
+      padding={{ base: '.5em 0em', sm: '1em 0em'}}
       display={'flex'}
       flexDir={'column'}
       >
