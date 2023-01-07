@@ -1,8 +1,8 @@
-import { extendTheme } from '@chakra-ui/react'
-import styles from './styles'
-import { colors } from "./foundations/colors"
-import { typography } from "./foundations/typography"
-import * as allComponents from "./components"
+import { extendTheme } from "@chakra-ui/react";
+import styles from "./styles";
+import { colors } from "./foundations/colors";
+import { typography } from "./foundations/typography";
+import * as allComponents from "./components";
 
 const theme = extendTheme ({
   ...styles,

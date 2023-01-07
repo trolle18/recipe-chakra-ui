@@ -37,8 +37,7 @@ export default function Nav() {
           </NavLinkBtn>
         </VStack>      
             
-      </VStack>
-    
+      </VStack>    
     </>
   );
 };
