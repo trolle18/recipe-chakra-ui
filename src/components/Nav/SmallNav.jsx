@@ -14,18 +14,22 @@ import IconComp from "../IconComp";
 export default function SmallNav() {
   return (
     <>
-      <nav className="slim-nav-cntr">
+      <Flex
+      m={'0'}
+      p={{base:'.5em', md: '1em'}}
+      >
       <HStack
           w={'full'}
           justify={'space-between'}
           >
         <Link  to={'/'}>
           <Flex flexDir={'row'} >
-          <Icon as={GiKnifeFork}  color={'black'} h={{ base: '2rem', md: '2.5rem', lg: '3rem'}} w={'auto'} />
+          <Icon as={GiKnifeFork}  color={'black'} h={{ base: '1rem', md: '1.5rem', lg: '1.75rem'}} w={'auto'} />
           <Heading 
           as={'h1'} 
+          m={'0'}
           color={'black'}
-          fontSize={{ base: '2rem', md: '2.5rem', lg: '3rem'}}
+          fontSize={{ base: '1rem', md: '1.5rem', lg: '1.75rem'}}
           fontWeight={'semibold'}
           >
             Recipes
@@ -35,51 +39,92 @@ export default function SmallNav() {
 
           <HStack
           w={'full'}
+          alignSelf={'center'}
           justify={'flex-end'}
+          gap={{base: '1em', md: '1em'}}
           >
-             <NavLinkBtn variant="whiteRound">
-              <NavLink to={'/cuisine/italian'} >
-                  <IconComp as={FaPizzaSlice} />
-                  <Text fontSize={'.75rem'} margin={'0em'} padding={'0em'}>Italian</Text>
+            <NavLinkBtn variant={{ base: 'plainRound', md: 'whiteRound'}} >
+              <NavLink to={'/cuisine/italian'} aria-label="italian">
+                <IconComp as={FaPizzaSlice} />
+                <Text 
+                fontSize={'.75rem'}
+                m={'0'} 
+                p={'0'}
+                display={{ base: 'none', md: 'block'}}
+                >
+                  Italian
+                </Text>
               </NavLink>
             </NavLinkBtn>
 
-            <NavLinkBtn  variant="whiteRound">
-              <NavLink to={'/cuisine/american'} >
-                  <IconComp as={FaHamburger} />
-                  <Text fontSize={'.75rem'} margin={'0'} padding={'0'}>American</Text>
+            <NavLinkBtn variant={{ base: 'plainRound', md: 'whiteRound'}} >
+              <NavLink to={'/cuisine/american'} aria-label="american">
+                <IconComp as={FaHamburger} />
+                <Text 
+                fontSize={'.75rem'}
+                m={'0'} 
+                p={'0'}
+                display={{ base: 'none', md: 'block'}}
+                >
+                  American
+                </Text>
               </NavLink>
             </NavLinkBtn>   
 
-            <NavLinkBtn variant="whiteRound">
-              <NavLink to={'/cuisine/thai'} >
-                  <IconComp as={GiNoodles} />
-                  <Text fontSize={'.75rem'} margin={'0'} padding={'0'}>Thai</Text>
+            <NavLinkBtn variant={{ base: 'plainRound', md: 'whiteRound'}} >
+              <NavLink to={'/cuisine/thai'} aria-label="thai">
+                <IconComp as={GiNoodles} />
+                <Text 
+                fontSize={'.75rem'}
+                m={'0'} 
+                p={'0'}
+                display={{ base: 'none', md: 'block'}}
+                >
+                  Thai
+                </Text>
               </NavLink>
             </NavLinkBtn>   
             
-            <NavLinkBtn variant="whiteRound">
-              <NavLink to={'/cuisine/japanese'} >
-                  <IconComp as={GiSushis} />
-                  <Text fontSize={'.75rem'} margin={'0'} padding={'0'}>Japanese</Text>
+            <NavLinkBtn variant={{ base: 'plainRound', md: 'whiteRound'}} >
+              <NavLink to={'/cuisine/japanese'} aria-label="japanese">
+                <IconComp as={GiSushis} />
+                <Text 
+                fontSize={'.75rem'}
+                m={'0'} 
+                p={'0'}
+                display={{ base: 'none', md: 'block'}}
+                >
+                Japanese
+                </Text>
               </NavLink>
             </NavLinkBtn>   
 
-            <NavLinkBtn variant={'whiteRound'} left={'0'} >
-              <NavLink to={'/favorites'} >
+            <NavLinkBtn variant={{ base: 'plainRound', md: 'whiteRound'}} >
+              <NavLink to={'/favorites'} aria-label="favorites">
                 <IconComp as={IoHeart} />
-                <Text fontSize={'.75rem'} margin={'0'} padding={'0'}>Favorites</Text>
+                <Text 
+                fontSize={'.75rem'}
+                m={'0'} 
+                p={'0'}
+                display={{ base: 'none', md: 'block'}}
+                >
+                  Favorites
+                </Text>
               </NavLink>
             </NavLinkBtn>
           </HStack>
-          <Search/>
+
+          <Flex maxW={'33%'}>
+            <Search/>
+          </Flex>
+          
         </HStack>
 
 
          
         {/* <BurgerMenu/> */}
-      </nav>  
-      <div className="hidden" id="nav-overflow"></div>        
+      </Flex>  
+      {/* <div className="hidden" id="nav-overflow"></div>         */}
     </>
   );
 };
