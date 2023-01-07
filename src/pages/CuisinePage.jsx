@@ -40,9 +40,7 @@ export default function CuisinePage() {
         textTransform={'capitalize'}
         >
           {params.type}
-        </Heading>
-
-        
+        </Heading>        
           <motion.Flex
           animate={{opacity: 1}}
           initial={{opacity: 0}}
@@ -67,10 +65,8 @@ export default function CuisinePage() {
                   </Flex>
                 )
               })}
-            </Flex>
-            
-          </motion.Flex>
-             
+            </Flex>            
+          </motion.Flex>             
       </SectionCntr>
     </>
   )
