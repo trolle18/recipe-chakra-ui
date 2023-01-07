@@ -1,7 +1,7 @@
 import { useState } from 'react';
 import { FaSearch } from 'react-icons/fa';
 import { useNavigate } from 'react-router-dom';
-import { FormControl, Input, InputGroup, InputLeftElement, Icon } from '@chakra-ui/react';
+import { Input, InputGroup, InputLeftElement, Icon } from '@chakra-ui/react';
 
 
 export default function Search() {

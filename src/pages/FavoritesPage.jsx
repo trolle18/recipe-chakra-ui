@@ -3,15 +3,15 @@ import { useState, useEffect } from "react";
 import { motion } from "framer-motion";
 import SmallNav from '../components/Nav/SmallNav';
 import SectionCntr from '../components/SectionCntr';
-import { Flex, Heading, FormControl, Input, InputGroup, InputLeftElement, Icon } from '@chakra-ui/react';
+import { Flex, Heading } from '@chakra-ui/react';
 import RecipeSlide from '../components/RecipeSlide';
-import { FaSearch } from 'react-icons/fa';
+// import { FaSearch } from 'react-icons/fa';
 
 
 export default function FavoritesPage() {
   const [favorites, setFavorites] = useState([]);
   let params = useParams();
-  const [searchValue, setSearchValue] = useState("");
+  // const [searchValue, setSearchValue] = useState("");
 
     // Fetch cuisine from API
   const getFavorites = async () => {
@@ -65,7 +65,7 @@ export default function FavoritesPage() {
             rowGap={'2em'}
             >
               {favorites
-              .filter((recipe) => recipe.title.toLowerCase().startsWith(searchValue) || recipe.diets.toLowerCase().startsWith(searchValue))
+              // .filter((recipe) => recipe.title.toLowerCase().startsWith(searchValue) || recipe.diets.toLowerCase().startsWith(searchValue))
               .map((recipe) => {
                 return (
                   <Flex

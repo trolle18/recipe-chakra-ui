@@ -1,9 +1,7 @@
 import { Flex, Heading } from '@chakra-ui/react';
 import { useEffect, useState } from 'react';
 import { useParams } from 'react-router-dom';
-import { Link } from "react-router-dom";
 import { motion } from "framer-motion";
-// import Footer from '../components/Footer';
 import SectionCntr from '../components/SectionCntr';
 import SmallNav from '../components/Nav/SmallNav';
 import RecipeSlide from '../components/RecipeSlide';
