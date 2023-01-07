@@ -30,7 +30,7 @@ export default function RecipeSlide( {recipe} ) {
 
   return (
     <>
-      <Container h={'full'} >
+      <Container h={'full'} p={'.5em'}>
         <Card>
           <Flex
           w={'full'}
@@ -45,7 +45,7 @@ export default function RecipeSlide( {recipe} ) {
           </Flex>             
           
           <Link to={'/recipe/'+ recipe.id} >
-            <Flex flexDir={'column'} gap={'.25em'}>
+            <Flex p={'.5em'} flexDir={'column'} gap={'.25em'}>
               <Flex 
               minH={'3.5rem'}
               w={'full'}

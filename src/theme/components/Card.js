@@ -3,24 +3,19 @@ export const cardStyles = {
       
       baseStyle: {
         height: 'full',
-        // margin: '.5em',
         flexDirection: 'column',
-        border: 'solid red 1px',
+        borderRadius: '.25em',
+        boxShadow: 'md',
         overflow: 'hidden',
       },
+
       variants: {
         primary: {
-          color: 'white',
+          // borderRadius: '.25em',
+          boxShadow: 'md',
         },
-        black: {
-          color: 'black',
-        },
-        redOrange: {
-          color: 'redOrange',
-        },
-        small: {
-          height: "1.5em",
-          width: "auto",
+        rounded: {
+          borderRadius: '.25em',
         },
        
       }
