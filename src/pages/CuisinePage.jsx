@@ -1,10 +1,10 @@
 import { useParams } from 'react-router-dom';
 import { useState, useEffect } from "react";
 import { motion } from "framer-motion";
-import SmallNav from '../components/SmallNav';
+import SmallNav from '../components/Nav/SmallNav';
 // import CuisineCard from '../components/CuisineCard';
 import RecipeSlide from '../components/RecipeSlide';
-import Footer from '../components/Footer';
+// import Footer from '../components/Footer';
 
 
 export default function CuisinePage() {
