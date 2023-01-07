@@ -1,8 +1,8 @@
 /* eslint-disable react-hooks/exhaustive-deps */
 import { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
-import Footer from "../components/Footer";
-import SmallNav from "../components/SmallNav";
+// import Footer from "../components/Footer";
+import SmallNav from "../components/Nav/SmallNav";
 
 
 function RecipePage() {
@@ -69,7 +69,7 @@ function RecipePage() {
           )}
         </div>
 
-        <Footer/>
+        {/* <Footer/> */}
       </section>
     </>
   )
