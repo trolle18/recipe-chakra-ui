@@ -12,14 +12,27 @@ export default function Search() {
   const handleSubmit = (e) => {
     e.preventDefault();
     navigate('/searched/'+input)
+    console.log('searched')
   };
 
+  // const key = (e) => {
+  //   onKeyPress={(e) => {
+  //     if (e.key === "Enter") {
+  //         this.setState({ message: e.target.value },
+  //         () => {
+  //             alert(this.state.message);
+  //         });
+  //     }
+  // }}
+  // }
+
+
   return (
-    <FormControl onSubmit={handleSubmit}>
+    <form onSubmit={handleSubmit} >
       <InputGroup bg={'white'} borderRadius={'50%'}>
         <InputLeftElement  children={<Icon as={FaSearch} color={'black'} />} />
-        <Input  type="text" value={input} onChange={(e) => setInput(e.target.value)} />
+        <Input type="text" value={input} onChange={(e) => setInput(e.target.value)} />
       </InputGroup>
-    </FormControl>
+    </form>
   )
 };
