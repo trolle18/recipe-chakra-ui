@@ -1,8 +1,8 @@
 import { textSpecs, typography } from "./foundations/typography"
 
 const styles = {
-  styles: {
-    global: {
+  // styles: {
+  //   global: {
       html: {
         height: "100%",
         color: 'black',
@@ -22,8 +22,8 @@ const styles = {
       h4: textSpecs.h4,
       h5: textSpecs.h5,
       "b, strong": { fontWeight: typography.fontWeights.black },
-    }
-  }
+    // }
+  // }
 };
 
 export default styles
