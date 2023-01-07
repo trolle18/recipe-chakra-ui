@@ -1,6 +1,6 @@
 export const sectionCntrStyles = {
   baseStyle: {
-    margin: '2em 0em',
+    margin: '2em 1em',
     // display: 'flex',   
   },
 

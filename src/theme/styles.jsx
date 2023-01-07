@@ -16,7 +16,7 @@ const styles = {
 
       body: {
         minHeight: "100%",
-        bg: 'white',
+        bg: '#f1f1f1',
       },
       
       p: textSpecs.base,
