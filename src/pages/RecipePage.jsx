@@ -1,5 +1,5 @@
 /* eslint-disable react-hooks/exhaustive-deps */
-import { Flex, Heading, HStack, ListItem, Tab, TabList, Tabs, Text, UnorderedList, VStack } from "@chakra-ui/react";
+import { Flex, Heading, ListItem, Tab, TabList, Tabs, Text, UnorderedList, VStack } from "@chakra-ui/react";
 import { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
 import SmallNav from "../components/Nav/SmallNav";
