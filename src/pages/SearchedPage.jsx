@@ -42,7 +42,7 @@ export default function SearchedPage() {
           Search results for "{params?.search}"
         </Heading>    
         
-          <motion.Flex
+          <motion.div
           animate={{opacity: 1}}
           initial={{opacity: 0}}
           exit={{opacity: 0}}
@@ -57,13 +57,16 @@ export default function SearchedPage() {
             >
              {searchedRecipes?.map((recipe) => {
                 return (
-                  <Flex h={'max-content'} w={{base: '100%', md: '48%', lg: '30%', xl: '22%'}}>
+                  <Flex
+                  key={recipe.id}
+                   h={'max-content'}
+                   w={{base: '100%', md: '48%', lg: '30%', xl: '22%'}}>
                     <RecipeSlide recipe={recipe}/>
                   </Flex>
                 )
               })}
             </Flex>            
-          </motion.Flex>
+          </motion.div>
       </SectionCntr>
     </>
   )

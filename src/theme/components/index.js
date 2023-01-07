@@ -1,3 +1,4 @@
+export { buttonStyles } from "./button"
 export { cardStyles } from "./Card"
 export { favBtnStyles } from "./FavBtn"
 export { gridCntrStyles } from "./GridCntr"

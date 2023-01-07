@@ -3,9 +3,9 @@
 import { textSpecs, typography } from "./foundations/typography"
 
 
-const styles = {
+export const styles = {
 
-  styles: {
+  globalStyles: {
     global: {
       html: {
         height: "100%",       
@@ -30,4 +30,3 @@ const styles = {
   }
 };
 
-export default styles
