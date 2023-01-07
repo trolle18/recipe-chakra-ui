@@ -1,10 +1,11 @@
 import { useParams } from 'react-router-dom';
 import { useState, useEffect } from "react";
 import { motion } from "framer-motion";
-import SmallNav from '../components/SmallNav';
+import SmallNav from '../components/Nav/SmallNav';
+import SectionCntr from '../components/SectionCntr';
+import { Flex, Heading, FormControl, Input, InputGroup, InputLeftElement, Icon } from '@chakra-ui/react';
+import RecipeSlide from '../components/RecipeSlide';
 import { FaSearch } from 'react-icons/fa';
-import RecipeArticle from '../components/RecipeArticle';
-import Footer from '../components/Footer';
 
 
 export default function FavoritesPage() {
@@ -27,39 +28,60 @@ export default function FavoritesPage() {
   return (
     <>
       <SmallNav/>
-      <section className="subpage">
+      <SectionCntr>
         <section className=" page-section">
-          <h1>Favorites</h1>
+          <Heading
+          as={'h1'} 
+          fontSize={{ base: '2rem', md: '2rem'}}
+          fontWeight={'medium'}
+          textTransform={'capitalize'}
+          >
+            Favorites
+          </Heading>     
+{/*         
+          <Flex
+          w={{base: 'full', md: '48%'}}
+          m={'1em 0'}
+          >
+            <FormControl>
+              <InputGroup bg={'white'} borderRadius={'50%'}>
+                <InputLeftElement  children={<Icon as={FaSearch} color={'black'} />} />
+                <Input placeholder='Search favorites' type="text" onChange={(e) => setSearchValue(e.target.value.toLowerCase())}  />
+              </InputGroup>
+            </FormControl>
+          </Flex> */}
 
-          <div className="searchbar-cntr">
-            <div className="searchbar">
-              <FaSearch/>
-              <input 
-              type="text" 
-              placeholder='Search favorites...'
-              onChange={(e) => setSearchValue(e.target.value.toLowerCase())} 
-              />
-            </div>
-          </div>
-
-          <motion.div className="flex-grid" 
-            animate={{opacity: 1}}
-            initial={{opacity: 0}}
-            exit={{opacity: 0}}
-            transition={{duration: 0.5}}>
-
-            {favorites
-            .filter((recipe) => recipe.title.toLowerCase().startsWith(searchValue) || recipe.diets.toLowerCase().startsWith(searchValue))
-            .map((recipe) => {
-              return (
-                <RecipeArticle recipe={recipe} key={recipe.id}/>
-              )
+          <motion.div
+          animate={{opacity: 1}}
+          initial={{opacity: 0}}
+          exit={{opacity: 0}}
+          transition={{duration: 0.5}}
+          >
+            <Flex
+            w={'full'}
+            flexWrap={'wrap'}
+            flexDir={'row'}    
+            justifyContent={'space-between'}
+            rowGap={'2em'}
+            >
+              {favorites
+              .filter((recipe) => recipe.title.toLowerCase().startsWith(searchValue) || recipe.diets.toLowerCase().startsWith(searchValue))
+              .map((recipe) => {
+                return (
+                  <Flex
+                  key={recipe.id}
+                  h={'max-content'}
+                  w={{base: '100%', md: '48%', lg: '30%', xl: '22%'}}
+                  >
+                    <RecipeSlide recipe={recipe}/>
+                  </Flex>
+                )
             })}
+            </Flex>    
           </motion.div>
 
         </section>
-        <Footer/>
-      </section>      
+      </SectionCntr>   
     </>
   )
 }

@@ -1,11 +1,11 @@
 /* eslint-disable react-hooks/exhaustive-deps */
-import { useEffect, useState } from 'react';
+// import { useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
 import Search from '../Search';
 
 export default function BurgerMenu() {
-  const [show, setShow] = useState(true);
-  const [lastScrollY, setLastScrollY] = useState(0);
+  // const [show, setShow] = useState(true);
+  // const [lastScrollY, setLastScrollY] = useState(0);
 
   // // HIDE DROPDOWN ON SCROLL
   // const controlShow = () => {
@@ -62,7 +62,9 @@ export default function BurgerMenu() {
             <path d="M1 7 h8"/>            
         </svg> 
       </button>
-      <div className={`burger__dropdown hidden ${show && ""}`} id="dropdown">
+      <div 
+      // className={`burger__dropdown hidden ${show && ""}`} 
+      id="dropdown">
         <div className="dropdown-inner-cntr">
         <Search/>
         <Link to={'/cuisine/italian'}>Italian</Link>
