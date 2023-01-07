@@ -2,36 +2,40 @@
 
 export const colors = {
   colors: {
-    black: "#000055",
+    black: "#000",
     white: "#fff",
     test: "#eb9534",
     grey: {
-      900: "070757",
-      800: "#202068",
-      700: "#393979",
-      600: "#515189",
-      500: "#6a6a9a",
-      400: "#8383ab",
-      300: "#9c9cbc",
-      200: "#b5b5cd",
-      100: "#cdcddd",
-      50: "#e6e6ee",
+      900: "070707",
+      800: "#202020",
+      700: "#393939",
+      600: "#515151",
+      500: "#6a6a6a",
+      400: "#838383",
+      300: "#9c9c9c",
+      200: "#b5b5b5",
+      100: "#cdcdcd",
+      50: "#e6e6e6",
       lightest: "#E6E6E6", // Naming convention should be changed once we have all correct gray shades. Probably in above manner.
       lighter: "#E9E8ED",
       dark: "#B4B4B4",
     },
 
-    navy: {
-      50: "#d0dcfb",
-      100: "#aac0fe",
-      200: "#a3b9f8",
-      300: "#728fea",
-      400: "#3652ba",
-      500: "#1b3bbb",
-      600: "#24388a",
-      700: "#1b254b",
-      800: "#111c44",
-      900: "#0b1437",
+    orange: {
+      100: "#e8812d",
+      200: "#e8812d",
+    },
+    redOrange: {
+      100: "#d64b21",
+      200: "#d64b21",
+    },
+    blue: {
+      100: "#4c54aa",
+      200: "#4c54aa",
+    },
+    green: {
+      100: "#508d46",
+      200: "#508d46",
     },
 
     brand: {

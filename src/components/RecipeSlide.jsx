@@ -1,8 +1,9 @@
 import { Link } from "react-router-dom";
-// import { SplideSlide } from '@splidejs/react-splide';
-import '@splidejs/react-splide/css';
+import "@splidejs/react-splide/css";
 import { IoTimerOutline } from "react-icons/io5";
 import FavoriteBtn from "./FavoriteBtn";
+import { Container, Flex, Heading, Text, Icon } from "@chakra-ui/react";
+import Card from "./Card";
 
 
 export default function RecipeSlide( {recipe} ) {
@@ -10,46 +11,61 @@ export default function RecipeSlide( {recipe} ) {
   function CheckReady()  {
     const readyInMin = recipe.readyInMinutes;
     if (readyInMin) {
-      return ( <p><IoTimerOutline/> {recipe.readyInMinutes} min</p> )
+      return ( <Text m={'0'}><Icon as={IoTimerOutline}/> {recipe.readyInMinutes} min</Text> )
     }
   }
   function CheckServings()  {
     const servings = recipe.servings;
     if (servings) {
-      return ( <p>Servings {recipe.servings}</p> )
+      return ( <Text m={'0'}>Servings: {recipe.servings}</Text> )
     }
   }
   function CheckDiets()  {
     const diets = recipe.diets;
     if (diets) {
-      return ( <p>{recipe.diets}</p> )
+      return ( <Text m={'0'} fontSize={'1rem'} color={'grey.400'}>{recipe.diets}</Text> )
     }
   }
 
 
   return (
     <>
-      <article className="recipe-slide">
-        <div className="recipe-slide__content">    
-        
-          <FavoriteBtn recipe={recipe}/>
-          <div className="img-cntr">
-            <img src={recipe.image} alt={recipe.title}/>
-          </div>             
-
-          <Link to={'/recipe/'+ recipe.id}>      
-            <div className="slide-text">
-              <h4>{recipe.title}</h4>
-              <div className="slide-text-details">
-                {CheckReady()}
-                {CheckServings()}
+      <Container h={'full'} p={'.5em'}>
+        <Card>
+          <Flex
+          w={'full'}
+          h={'140px'}
+          backgroundImage={`url(${recipe.image})`}
+          backgroundSize={'cover'}
+          backgroundPosition={'center center'}
+          >
+            <Flex w={'max-content'} h={'max-content'} m={'.5em .5em 0 auto'} >
+              <FavoriteBtn recipe={recipe}/>
+            </Flex>            
+          </Flex>             
+          
+          <Link to={'/recipe/'+ recipe.id}>
+            <Flex p={'.5em'} flexDir={'column'} gap={'.25em'}>
+              <Flex w={'full'}>
+                <Heading as={'h4'} fontWeight={'medium'} fontSize={'1.25rem'}>
+                  {recipe.title}
+                </Heading>
+              </Flex>              
+              <Flex flexDir={'column'} justify={'space-between'} gap={'.5em'}>
+                <Flex 
+                flexDir={{ base: 'column', md: 'row'}}
+                justify={'space-between'}
+                >
+                  {CheckReady()}
+                  {CheckServings()}
+                </Flex>                
                 {CheckDiets()}
-              </div>                           
-            </div>
+              </Flex>                           
+            </Flex>
           </Link> 
 
-        </div>              
-      </article>
+        </Card>              
+      </Container>
     </>
   )
 };

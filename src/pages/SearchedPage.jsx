@@ -1,8 +1,12 @@
+import { Flex, Heading } from '@chakra-ui/react';
 import { useEffect, useState } from 'react';
 import { useParams } from 'react-router-dom';
 import { Link } from "react-router-dom";
-import Footer from '../components/Footer';
-import SmallNav from '../components/SmallNav';
+import { motion } from "framer-motion";
+// import Footer from '../components/Footer';
+import SectionCntr from '../components/SectionCntr';
+import SmallNav from '../components/Nav/SmallNav';
+import RecipeSlide from '../components/RecipeSlide';
 
 
 export default function SearchedPage() {
@@ -30,22 +34,39 @@ export default function SearchedPage() {
   return (
     <>
       <SmallNav/>
-    <section className="cuisine">
-        <h2>Search result for "{params.search}"</h2>
-        <section className="grid">
-          {searchedRecipes.map((item) => {
-            return (
-              <div className="card" key={item.id}>
-                <Link to={'/recipe/'+ item.id}>
-                  <img src={item.image} alt="" />
-                  <h4>{item.title}</h4>
-                </Link>
-              </div>
-            )
-          })}
-        </section>
-        <Footer/>
-      </section>
+      <SectionCntr>
+        <Heading 
+        as={'h2'} 
+        fontSize={{ base: '1.5rem', md: '1.75rem'}}
+        fontWeight={'medium'}
+        // textTransform={'capitalize'}
+        >
+          Search results for "{params?.search}"
+        </Heading>    
+        
+          <motion.Flex
+          animate={{opacity: 1}}
+          initial={{opacity: 0}}
+          exit={{opacity: 0}}
+          transition={{duration: 0.5}}
+          >
+            <Flex
+            w={'full'}
+            flexWrap={'wrap'}
+            flexDir={'row'}    
+            justifyContent={'space-between'}
+            rowGap={'2em'}
+            >
+             {searchedRecipes?.map((recipe) => {
+                return (
+                  <Flex h={'max-content'} w={{base: '100%', md: '48%', lg: '30%', xl: '22%'}}>
+                    <RecipeSlide recipe={recipe}/>
+                  </Flex>
+                )
+              })}
+            </Flex>            
+          </motion.Flex>
+      </SectionCntr>
     </>
   )
 };

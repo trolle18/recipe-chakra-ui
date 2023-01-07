@@ -1,9 +1,19 @@
+import { FormControl, Input, InputGroup, Icon, useStyleConfig, IconButton } from "@chakra-ui/react";
 import { IoHeart } from "react-icons/io5";
+
+function FavBtn(props)  {
+	const { variant, ...rest } = props
+	const favBtnStyles = useStyleConfig('favBtnStyles', {variant});
+
+	return (
+		<IconButton __css={favBtnStyles} {...rest} />
+	)
+};
 
 
 export default function FavoriteBtn( {recipe} ) {   
 
-  function deleteItem(index) {
+  function deleteFav(index) {
     var favorites = JSON.parse(localStorage.getItem("favorites"));
     favorites.splice(index, 1);        
     // console.log(favorites)
@@ -63,7 +73,7 @@ export default function FavoriteBtn( {recipe} ) {
       if(present) {
         favBtn.classList.remove("disabled")
         favBtn.classList.add("active")
-        deleteItem()
+        deleteFav()
         // favorites.push(favRecipe)                
         console.log("The recipe was removed")
       }            
@@ -88,25 +98,26 @@ export default function FavoriteBtn( {recipe} ) {
 
   return (
     <>
-      <form 
+      <FormControl 
       onSubmit={handleSubmit}
       >
-        <input id={recipe.id} type="hidden" value={recipe.id} />
-        <input id={recipe.title} type="hidden" value={recipe.title} />
-        <input id={recipe.image} type="hidden" value={recipe.image} />
-        <input id={recipe.readyInMinutes} type="hidden" value={recipe.readyInMinutes} />
-        <input id={recipe.servings} type="hidden" value={recipe.servings} />
-        <input id={recipe.diets} type="hidden" value={recipe.diets} />
+        <InputGroup>       
+          <Input id={recipe.id} type="hidden" value={recipe.id} />
+          <Input id={recipe.title} type="hidden" value={recipe.title} />
+          <Input id={recipe.image} type="hidden" value={recipe.image} />
+          <Input id={recipe.readyInMinutes} type="hidden" value={recipe.readyInMinutes} />
+          <Input id={recipe.servings} type="hidden" value={recipe.servings} />
+          <Input id={recipe.diets} type="hidden" value={recipe.diets} />
+        </InputGroup>
 
-        <button 
+        <FavBtn 
         id="submit"
         type="submit"
-        className="fav-btn disabled"
-        // className="fav-btn disabled" 
-        >
-          <IoHeart id="heartIcon" className="disabled"/>
-        </button>
-      </form>
+        className="disabled"
+        icon={<Icon as={IoHeart}/>}
+        />
+        
+      </FormControl>
     </>
   )
 };

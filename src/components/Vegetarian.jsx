@@ -1,3 +1,4 @@
+import { Heading } from "@chakra-ui/react";
 import { useEffect, useState } from "react";
 import Carousel from "./Carousel";
 
@@ -25,12 +26,14 @@ export default function Vegetarian() {
 
   return (
     <>
-      <section className="page-section">
-        <div className="wrapper">
-          <h3>Vegetarian</h3>
-          <Carousel recipes={recipes}/>
-        </div>
-      </section>
+      <Heading 
+      as={'h3'} 
+      fontSize={{ base: '1.5rem', md: '2rem'}}
+      fontWeight={'medium'}
+      >
+        Vegetarian
+      </Heading>
+      <Carousel recipes={recipes}/>
     </>
   )
 };

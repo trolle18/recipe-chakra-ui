@@ -1,10 +1,10 @@
 import { useParams } from 'react-router-dom';
 import { useState, useEffect } from "react";
 import { motion } from "framer-motion";
-import SmallNav from '../components/SmallNav';
-// import CuisineCard from '../components/CuisineCard';
+import SmallNav from '../components/Nav/SmallNav';
 import RecipeSlide from '../components/RecipeSlide';
-import Footer from '../components/Footer';
+import { Flex, Heading } from '@chakra-ui/react';
+import SectionCntr from '../components/SectionCntr';
 
 
 export default function CuisinePage() {
@@ -32,22 +32,42 @@ export default function CuisinePage() {
   return (
     <>
       <SmallNav/>
-      <section className="cuisine page-section">
-        <h1>{params.type}</h1>
-        <motion.div className="grid" 
+      <SectionCntr>
+        <Heading 
+        as={'h1'} 
+        fontSize={{ base: '2rem', md: '2rem'}}
+        fontWeight={'medium'}
+        textTransform={'capitalize'}
+        >
+          {params.type}
+        </Heading>        
+          <motion.Flex
           animate={{opacity: 1}}
           initial={{opacity: 0}}
           exit={{opacity: 0}}
-          transition={{duration: 0.5}}>
-
-          {cuisines.map((recipe) => {
-            return (
-              <RecipeSlide recipe={recipe} key={recipe.id}/>
-            )
-          })}
-        </motion.div>
-        <Footer/>
-      </section>
+          transition={{duration: 0.5}}
+          >
+            <Flex
+            w={'full'}
+            flexWrap={'wrap'}
+            flexDir={'row'}    
+            justifyContent={'space-between'}
+            rowGap={'2em'}
+            >
+              {cuisines.map((recipe) => {
+                return (
+                  <Flex 
+                  key={recipe.id}
+                  h={'max-content'}
+                  w={{base: '100%', md: '48%', lg: '30%', xl: '22%'}}
+                  >
+                    <RecipeSlide recipe={recipe}/>
+                  </Flex>
+                )
+              })}
+            </Flex>            
+          </motion.Flex>             
+      </SectionCntr>
     </>
   )
 }

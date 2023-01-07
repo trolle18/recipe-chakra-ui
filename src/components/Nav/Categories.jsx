@@ -1,48 +1,40 @@
 import { FaPizzaSlice, FaHamburger } from 'react-icons/fa';
 import { GiNoodles, GiSushis } from 'react-icons/gi';
 import { NavLink } from 'react-router-dom';
-import { Icon, Text, VStack } from "@chakra-ui/react";
+import { Text } from "@chakra-ui/react";
 import NavLinkBtn from './NavLinkBtn';
+import IconComp from '../IconComp';
 
 
 export default function Categories() {
-
 
   return (
     <>
       <NavLinkBtn variant="blackRound">
         <NavLink to={'/cuisine/italian'} >
-          <VStack>
-            <Icon as={FaPizzaSlice}  color='white' h='1.5em' w='1.5em'/>
-            <Text color='white'>Italian</Text>
-          </VStack>
+            <IconComp as={FaPizzaSlice} />
+            <Text fontSize={'.75rem'} margin={'0em'} padding={'0em'} color={'white'}>Italian</Text>
         </NavLink>
       </NavLinkBtn>
 
       <NavLinkBtn  variant="blackRound">
         <NavLink to={'/cuisine/american'} >
-          <VStack>
-            <Icon as={FaHamburger}  color='white' h='1.5em' w='1.5em' />
-            <Text color='white'>American</Text>
-          </VStack>
+            <IconComp as={FaHamburger} />
+            <Text fontSize={'.75rem'} margin={'0'} padding={'0'} color={'white'}>American</Text>
         </NavLink>
       </NavLinkBtn>   
 
       <NavLinkBtn variant="blackRound">
         <NavLink to={'/cuisine/thai'} >
-          <VStack>
-            <Icon as={GiNoodles}  color='white' h='1.5em' w='1.5em'/>
-            <Text color='white'>Thai</Text>
-          </VStack>
+            <IconComp as={GiNoodles} />
+            <Text fontSize={'.75rem'} margin={'0'} padding={'0'} color={'white'}>Thai</Text>
         </NavLink>
       </NavLinkBtn>   
       
       <NavLinkBtn variant="blackRound">
         <NavLink to={'/cuisine/japanese'} >
-          <VStack gap={0} justifyContent='center'>
-            <Icon as={GiSushis}  color='white' h='auto' w='1.5rem'/>
-            <Text fontSize='1rem' margin='0' padding='0' color='white'>Japanese</Text>
-          </VStack>
+            <IconComp as={GiSushis} />
+            <Text fontSize={'.75rem'} margin={'0'} padding={'0'} color={'white'}>Japanese</Text>
         </NavLink>
       </NavLinkBtn>   
 
