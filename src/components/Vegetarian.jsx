@@ -26,7 +26,13 @@ export default function Vegetarian() {
 
   return (
     <>
-      <Heading as={'h3'} fontSize={'1.5rem'} fontWeight={'medium'}>Vegetarian</Heading>
+      <Heading 
+      as={'h3'} 
+      fontSize={{ base: '1.5rem', md: '2rem'}}
+      fontWeight={'medium'}
+      >
+        Vegetarian
+      </Heading>
       <Carousel recipes={recipes}/>
     </>
   )

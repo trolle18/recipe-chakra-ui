@@ -44,18 +44,18 @@ export default function RecipeSlide( {recipe} ) {
             </Flex>            
           </Flex>             
           
-          <Link to={'/recipe/'+ recipe.id} >
+          <Link to={'/recipe/'+ recipe.id}>
             <Flex p={'.5em'} flexDir={'column'} gap={'.25em'}>
-              <Flex 
-              // minH={'3.5rem'}
-              w={'full'}
-              >
-                <Heading as={'h4'} fontWeight={'medium'} fontSize={'1.25rem'} >
+              <Flex w={'full'}>
+                <Heading as={'h4'} fontWeight={'medium'} fontSize={'1.25rem'}>
                   {recipe.title}
                 </Heading>
               </Flex>              
               <Flex flexDir={'column'} justify={'space-between'} gap={'.5em'}>
-                <Flex flexDir={'row'} justify={'space-between'} >
+                <Flex 
+                flexDir={{ base: 'column', md: 'row'}}
+                justify={'space-between'}
+                >
                   {CheckReady()}
                   {CheckServings()}
                 </Flex>                

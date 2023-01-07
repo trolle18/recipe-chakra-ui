@@ -24,9 +24,11 @@ export default function Nav() {
 
         <VStack>
           <Search/>
+
           <HStack >
             <Categories/>
           </HStack>
+
           <NavLinkBtn variant={'white'} alignSelf={'flex-start'} left={'0'}>
             <NavLink to={'/favorites'} >
               <HStack>
@@ -34,9 +36,8 @@ export default function Nav() {
                 <Text fontSize={'.75rem'} margin={'0'} padding={'0'} >Favorites</Text>
               </HStack>
             </NavLink>
-          </NavLinkBtn>
-        </VStack>      
-            
+          </NavLinkBtn>          
+        </VStack>            
       </VStack>    
     </>
   );

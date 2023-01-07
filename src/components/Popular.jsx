@@ -25,7 +25,13 @@ export default function Popular() {
 
   return (
     <>
-      <Heading as={'h3'} fontSize={'1.5rem'} fontWeight={'medium'}>Popular</Heading>
+      <Heading 
+      as={'h3'} 
+      fontSize={{ base: '1.5rem', md: '2rem'}}
+      fontWeight={'medium'}
+      >
+        Popular
+      </Heading>
       <Carousel recipes={recipes}/>
     </>
   )
