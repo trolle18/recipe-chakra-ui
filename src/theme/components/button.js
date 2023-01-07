@@ -2,7 +2,7 @@ import { mode } from "@chakra-ui/theme-tools";
 
 
 const buttonStyles = {
-  components: {
+  // components: {
     Button: {
 
       baseStyle: {
@@ -81,6 +81,6 @@ const buttonStyles = {
       //   fontSize: "10px",
       // },
     },
-  },
+  // },
 };
 export default buttonStyles
