@@ -12,17 +12,28 @@ export default function Nav() {
 
   return (
     <>
-      <VStack >
+      <VStack 
+      gap={'1em'}
+      border={'solid red 1px'}
+      bg={'rgba(255, 255, 255, .2)'}
+      >
         <Flex>
           <Link  to={'/'}>
             <HStack>
-              <Icon as={GiKnifeFork}  color={'white'} h={'2rem'} w={'2rem'} />
-              <Heading as={'h1'} color={'white'}>Recipes</Heading>
+              <Icon as={GiKnifeFork}  color={'white'} h={{ base: '2rem', md: '2.5rem', lg: '3rem'}} w={'auto'} />
+              <Heading 
+              as={'h1'} 
+              color={'white'}
+              fontSize={{ base: '2rem', md: '2.5rem', lg: '3rem'}}
+              fontWeight={'semibold'}
+              >
+                Recipes
+              </Heading>
             </HStack>          
           </Link>
         </Flex>
 
-        <VStack>
+        <VStack gap={'1em'}>
           <Search/>
 
           <HStack >

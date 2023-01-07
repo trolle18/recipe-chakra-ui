@@ -5,13 +5,17 @@ export const iconStyles = {
       width: "auto",
     },
     md: {
-      height: "2em",
+      height: "1.5em",
+      width: "auto",
+    },
+    lg: {
+      height: "1.75em",
       width: "auto",
     }
   },
   
   baseStyle: {
-    height: '2em',
+    height: {base: '1em', sm: '1.25em', md: '1.5em'},
     width: 'auto',
   },
   variants: {
@@ -25,8 +29,7 @@ export const iconStyles = {
       color: 'redOrange',
     },
     small: {
-      height: "1.5em",
-      width: "auto",
-    },    
+      height: '1em',
+    }
   }
 };
