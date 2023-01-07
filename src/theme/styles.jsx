@@ -1,10 +1,8 @@
-// import { Styles } from "@chakra-ui/theme-tools"
-// import { colors } from "./foundations/colors"
 import { textSpecs, typography } from "./foundations/typography"
 
 
 const styles = {
-  // styles: {
+  styles: {
     global: {
       html: {
         height: "100%",       
@@ -26,7 +24,7 @@ const styles = {
       h5: textSpecs.h5,
       "b, strong": { fontWeight: typography.fontWeights.black },
     }
-  // }
+  }
 };
 
 export default styles
