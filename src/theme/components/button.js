@@ -1,7 +1,7 @@
 import { mode } from "@chakra-ui/theme-tools";
 
 
-const buttonStyles = {
+export const buttonStyles = {
   // components: {
     // Button: {
 
@@ -83,4 +83,4 @@ const buttonStyles = {
     // },
   // },
 };
-export default buttonStyles
+// export default buttonStyles
