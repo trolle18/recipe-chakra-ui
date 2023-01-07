@@ -1,7 +1,7 @@
 /* eslint-disable react-hooks/exhaustive-deps */
 import { useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
-import Search from './Search';
+import Search from '../Search';
 
 export default function BurgerMenu() {
   const [show, setShow] = useState(true);

@@ -1,11 +1,11 @@
 import { Link, NavLink } from "react-router-dom";
 import Categories from "./Categories";
-import Search from "./Search";
+import Search from "../Search";
 import { GiKnifeFork } from "react-icons/gi";
 import { IoHeart } from "react-icons/io5";
 import { Heading, HStack, Icon, Text, VStack, Flex } from "@chakra-ui/react";
 import NavLinkBtn from "./NavLinkBtn";
-import IconComp from "./IconComp";
+import IconComp from "../IconComp";
 
 
 export default function Nav() {

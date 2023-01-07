@@ -3,7 +3,7 @@ import { GiNoodles, GiSushis } from 'react-icons/gi';
 import { NavLink } from 'react-router-dom';
 import { Text } from "@chakra-ui/react";
 import NavLinkBtn from './NavLinkBtn';
-import IconComp from './IconComp';
+import IconComp from '../IconComp';
 
 
 export default function Categories() {

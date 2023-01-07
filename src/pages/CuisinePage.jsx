@@ -46,7 +46,7 @@ export default function CuisinePage() {
             )
           })}
         </motion.div>
-        <Footer/>
+        {/* <Footer/> */}
       </section>
     </>
   )

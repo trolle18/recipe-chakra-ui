@@ -1,10 +1,10 @@
 import { Link, NavLink } from "react-router-dom";
-import Categories from "./Categories";
+import BurgerMenu from "./Nav/BurgerMenu";
+import Categories from "./Nav/Categories";
 import Search from "./Search";
 import { GiKnifeFork } from "react-icons/gi";
-import BurgerMenu from "./BurgerMenu";
 import { IoHeart } from "react-icons/io5";
-import { FaPizzaSlice } from "react-icons/fa";
+// import { FaPizzaSlice } from "react-icons/fa";
 
 
 export default function SmallNav() {
