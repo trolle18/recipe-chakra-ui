@@ -5,6 +5,8 @@ export const cardStyles = {
     borderRadius: '.25em',
     boxShadow: 'md',
     overflow: 'hidden',
+    _hover: { boxShadow: 'lg' },
+    _focus: { boxShadow: 'lg' },
   },
 
   variants: {
