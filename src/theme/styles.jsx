@@ -1,11 +1,10 @@
 import { textSpecs, typography } from "./foundations/typography"
 
-
 const styles = {
   styles: {
     global: {
       html: {
-        height: "100%",       
+        height: "100%",
         color: 'black',
         fontSize: textSpecs.base.fontSize,
         fontFamily: "Helvetica, sans-serif",
