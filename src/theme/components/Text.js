@@ -1,5 +1,3 @@
-// import { mode } from "@chakra-ui/theme-tools";
-
 export const textStyles = {
 
   baseStyle: {
@@ -19,7 +17,5 @@ export const textStyles = {
       fontSize: ".5rem",
       color: "orange.100",
     },
-
-
   },
 };

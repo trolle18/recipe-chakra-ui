@@ -1,7 +1,4 @@
-// import { mode } from "@chakra-ui/theme-tools";
-
 export const navLinkBtnStyles = {
-
   baseStyle: {
     display: 'flex',
     justifyContent: 'center',
