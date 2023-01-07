@@ -8,9 +8,10 @@ import RecipeSlide from '../components/RecipeSlide';
 // import { FaSearch } from 'react-icons/fa';
 
 
-export default function FavoritesPage() {
-  const [favorites, setFavorites] = useState([]);
+export default function FavoritesPage() {  
+  let [favorites, setFavorites] = useState([]);
   let params = useParams();
+  if(favorites == null) favorites = []; // Create array, if it doesnt excist  
   // const [searchValue, setSearchValue] = useState("");
 
     // Fetch cuisine from API
@@ -64,9 +65,8 @@ export default function FavoritesPage() {
             justifyContent={'space-between'}
             rowGap={'2em'}
             >
-              {favorites
+              {favorites?.map((recipe) => {
               // .filter((recipe) => recipe.title.toLowerCase().startsWith(searchValue) || recipe.diets.toLowerCase().startsWith(searchValue))
-              .map((recipe) => {
                 return (
                   <Flex
                   key={recipe.id}
