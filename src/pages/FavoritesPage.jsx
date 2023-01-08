@@ -11,7 +11,7 @@ import RecipeSlide from '../components/RecipeSlide';
 export default function FavoritesPage() {  
   let [favorites, setFavorites] = useState([]);
   let params = useParams();
-  if(favorites == null) favorites = []; // Create array, if it doesnt excist  
+  // if(favorites == null) favorites = []; // Create array, if it doesnt excist  
   // const [searchValue, setSearchValue] = useState("");
 
     // Fetch cuisine from API

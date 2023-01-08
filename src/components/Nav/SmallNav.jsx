@@ -1,17 +1,63 @@
+import { useEffect, useState } from "react";
 import { Link, NavLink } from "react-router-dom";
-// import BurgerMenu from "./BurgerMenu";
-// import Categories from "./Categories";
-import Search from "../Search";
-// import { GiKnifeFork } from "react-icons/gi";
 import { IoHeart } from "react-icons/io5";
 import { FaPizzaSlice, FaHamburger } from 'react-icons/fa';
 import { GiKnifeFork, GiNoodles, GiSushis } from 'react-icons/gi';
-import { Flex, Heading, HStack, Icon, Text } from "@chakra-ui/react";
+import { Flex, Heading, HStack, Icon, Text, useMediaQuery } from "@chakra-ui/react";
+import Search from "../Search";
 import NavLinkBtn from "./NavLinkBtn";
 import IconComp from "../IconComp";
 
 
 export default function SmallNav() {
+  const [data, setData] = useState([]);
+
+  useEffect(() => {
+    async function getData() {
+        const response = await fetch("/data/navData.json");
+        const data = await response.json();
+        setData(data);             
+    }       
+      getData();        
+  }, []);
+
+  const Icons = {
+    "FaPizzaSlice": FaPizzaSlice,
+    "FaHamburger": FaHamburger,
+    "GiNoodles": GiNoodles,
+    "GiSushis": GiSushis
+  }
+
+  function NavCategory({link}) {
+    const [isLargerThanMD] = useMediaQuery('(min-width: 768px)')
+    const { [link.icon]: LinkIcon } = Icons
+    return (
+      <>
+        {isLargerThanMD 
+        ? 
+          <> 
+            <NavLinkBtn variant={'whiteRound'} >
+              <NavLink to={link.url} aria-label="italian">
+                <IconComp as={LinkIcon} />
+                <Text m={'0'} p={'0'} fontSize={'.75rem'}>
+                  {link.text}
+                </Text>
+              </NavLink>
+            </NavLinkBtn>
+          </>
+        :  
+        <> 
+          <NavLinkBtn variant={'plainRound'} >
+            <NavLink to={link.url} aria-label="italian">
+              <IconComp as={LinkIcon} />
+            </NavLink>
+          </NavLinkBtn>
+        </>
+        }
+      </>
+    )
+  }
+  
   return (
     <>
       <Flex
@@ -43,61 +89,9 @@ export default function SmallNav() {
           justify={'flex-end'}
           gap={{base: '1em', md: '1em'}}
           >
-            <NavLinkBtn variant={{ base: 'plainRound', md: 'whiteRound'}} >
-              <NavLink to={'/cuisine/italian'} aria-label="italian">
-                <IconComp as={FaPizzaSlice} />
-                <Text 
-                fontSize={'.75rem'}
-                m={'0'} 
-                p={'0'}
-                display={{ base: 'none', md: 'block'}}
-                >
-                  Italian
-                </Text>
-              </NavLink>
-            </NavLinkBtn>
-
-            <NavLinkBtn variant={{ base: 'plainRound', md: 'whiteRound'}} >
-              <NavLink to={'/cuisine/american'} aria-label="american">
-                <IconComp as={FaHamburger} />
-                <Text 
-                fontSize={'.75rem'}
-                m={'0'} 
-                p={'0'}
-                display={{ base: 'none', md: 'block'}}
-                >
-                  American
-                </Text>
-              </NavLink>
-            </NavLinkBtn>   
-
-            <NavLinkBtn variant={{ base: 'plainRound', md: 'whiteRound'}} >
-              <NavLink to={'/cuisine/thai'} aria-label="thai">
-                <IconComp as={GiNoodles} />
-                <Text 
-                fontSize={'.75rem'}
-                m={'0'} 
-                p={'0'}
-                display={{ base: 'none', md: 'block'}}
-                >
-                  Thai
-                </Text>
-              </NavLink>
-            </NavLinkBtn>   
-            
-            <NavLinkBtn variant={{ base: 'plainRound', md: 'whiteRound'}} >
-              <NavLink to={'/cuisine/japanese'} aria-label="japanese">
-                <IconComp as={GiSushis} />
-                <Text 
-                fontSize={'.75rem'}
-                m={'0'} 
-                p={'0'}
-                display={{ base: 'none', md: 'block'}}
-                >
-                Japanese
-                </Text>
-              </NavLink>
-            </NavLinkBtn>   
+            {data.map((link) => (
+              <NavCategory link={link} />
+            ))}  
 
             <NavLinkBtn variant={{ base: 'plainRound', md: 'whiteRound'}} >
               <NavLink to={'/favorites'} aria-label="favorites">
@@ -119,12 +113,7 @@ export default function SmallNav() {
           </Flex>
           
         </HStack>
-
-
-         
-        {/* <BurgerMenu/> */}
       </Flex>  
-      {/* <div className="hidden" id="nav-overflow"></div>         */}
     </>
   );
 };

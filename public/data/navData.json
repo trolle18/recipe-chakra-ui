@@ -1,54 +1,32 @@
+[
 
   {
-    "mainLink": [
-      {
-        "id": 111,
-        "type": "main",
-        "url": "/",
-        "text": "Recipes",
-        "icon": "GiKnifeFork"
-      }
-    ],
-
-    "navLinks": [
-      {
-        "id": 112,
-        "type": "category",
-        "url": "/cuisine/italian",
-        "text": "Italian",
-        "icon": "FaPizzaSlice"
-      },
-      {
-        "id": 113,
-        "type": "category",        
-        "url": "/cuisine/american",
-        "text": "American",
-        "icon": "FaHamburger"
-      },
-      {
-        "id": 114,
-        "type": "category",        
-        "url": "/cuisine/thai",
-        "text": "Thai",
-        "icon": "GiKnifeFork"
-      },
-      {
-        "id": 114,
-        "type": "category",        
-        "url": "/cuisine/japanese",
-        "text": "Japanese",
-        "icon": "GiSushis"
-      }
-    ],
-
-    "subLinks": [
-      {
-        "id": 112,
-        "type": "secondary",        
-        "url": "/favorites",
-        "text": "Favorites",
-        "icon": "IoHeart"
-      }
-    ]
-    
+    "id": 112,
+    "type": "category",
+    "url": "/cuisine/italian",
+    "text": "Italian",
+    "icon": "FaPizzaSlice"
+  },
+  {
+    "id": 113,
+    "type": "category",        
+    "url": "/cuisine/american",
+    "text": "American",
+    "icon": "FaHamburger"
+  },
+  {
+    "id": 114,
+    "type": "category",        
+    "url": "/cuisine/thai",
+    "text": "Thai",
+    "icon": "GiNoodles"
+  },
+  {
+    "id": 114,
+    "type": "category",        
+    "url": "/cuisine/japanese",
+    "text": "Japanese",
+    "icon": "GiSushis"
   }
+
+]

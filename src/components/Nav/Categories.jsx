@@ -1,3 +1,4 @@
+import { useEffect, useState } from "react";
 import { FaPizzaSlice, FaHamburger } from 'react-icons/fa';
 import { GiNoodles, GiSushis } from 'react-icons/gi';
 import { NavLink } from 'react-router-dom';
@@ -7,37 +8,45 @@ import IconComp from '../IconComp';
 
 
 export default function Categories() {
+  const [data, setData] = useState([]);
+
+  useEffect(() => {
+    async function getData() {
+        const response = await fetch("/data/navData.json");
+        const data = await response.json();
+        setData(data);             
+    }       
+      getData();        
+  }, []);
+
+  const Icons = {
+    "FaPizzaSlice": FaPizzaSlice,
+    "FaHamburger": FaHamburger,
+    "GiNoodles": GiNoodles,
+    "GiSushis": GiSushis
+  }
+  
+  function NavCategory({link}) {
+    const { [link.icon]: LinkIcon } = Icons
+    return (
+      <> 
+       <NavLinkBtn variant="blackRound">
+        <NavLink to={link.url} >
+            <IconComp as={LinkIcon} />
+            <Text fontSize={'.75rem'} margin={'0em'} padding={'0em'} color={'white'}>
+              {link.text}
+            </Text>
+        </NavLink>
+      </NavLinkBtn>
+      </>
+    )
+  }
 
   return (
     <>
-      <NavLinkBtn variant="blackRound">
-        <NavLink to={'/cuisine/italian'} >
-            <IconComp as={FaPizzaSlice} />
-            <Text fontSize={'.75rem'} margin={'0em'} padding={'0em'} color={'white'}>Italian</Text>
-        </NavLink>
-      </NavLinkBtn>
-
-      <NavLinkBtn  variant="blackRound">
-        <NavLink to={'/cuisine/american'} >
-            <IconComp as={FaHamburger} />
-            <Text fontSize={'.75rem'} margin={'0'} padding={'0'} color={'white'}>American</Text>
-        </NavLink>
-      </NavLinkBtn>   
-
-      <NavLinkBtn variant="blackRound">
-        <NavLink to={'/cuisine/thai'} >
-            <IconComp as={GiNoodles} />
-            <Text fontSize={'.75rem'} margin={'0'} padding={'0'} color={'white'}>Thai</Text>
-        </NavLink>
-      </NavLinkBtn>   
-      
-      <NavLinkBtn variant="blackRound">
-        <NavLink to={'/cuisine/japanese'} >
-            <IconComp as={GiSushis} />
-            <Text fontSize={'.75rem'} margin={'0'} padding={'0'} color={'white'}>Japanese</Text>
-        </NavLink>
-      </NavLinkBtn>   
-
+      {data.map((link) => (
+        <NavCategory link={link} />
+      ))}  
     </>
   )
 };
