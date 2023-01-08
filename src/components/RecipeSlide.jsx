@@ -39,7 +39,7 @@ export default function RecipeSlide( {recipe} ) {
           backgroundSize={'cover'}
           backgroundPosition={'center center'}
           >
-            <Flex w={'max-content'} h={'max-content'} m={'.5em .5em 0 auto'} >
+            <Flex w={'max-content'} h={'max-content'} m={'.5em .5em .5em auto'} >
               <FavoriteBtn recipe={recipe}/>
             </Flex>            
           </Flex>             
