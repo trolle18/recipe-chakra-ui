@@ -41,7 +41,7 @@ export default function CuisinePage() {
         >
           {params.type}
         </Heading>        
-          <motion.Flex
+          <motion.div
           animate={{opacity: 1}}
           initial={{opacity: 0}}
           exit={{opacity: 0}}
@@ -66,7 +66,7 @@ export default function CuisinePage() {
                 )
               })}
             </Flex>            
-          </motion.Flex>             
+          </motion.div>             
       </SectionCntr>
     </>
   )
