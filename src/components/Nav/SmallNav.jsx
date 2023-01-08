@@ -89,9 +89,7 @@ export default function SmallNav() {
           justify={'flex-end'}
           gap={{base: '1em', md: '1em'}}
           >
-            {data.map((link) => (
-              <NavCategory link={link} />
-            ))}  
+            {data.map((link) => ( <NavCategory link={link} /> ))}  
 
             <NavLinkBtn variant={{ base: 'plainRound', md: 'whiteRound'}} >
               <NavLink to={'/favorites'} aria-label="favorites">
@@ -106,6 +104,7 @@ export default function SmallNav() {
                 </Text>
               </NavLink>
             </NavLinkBtn>
+            
           </HStack>
 
           <Flex maxW={'33%'}>
