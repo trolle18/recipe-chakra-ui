@@ -37,7 +37,7 @@ export default function SmallNav() {
         ? 
           <> 
             <NavLinkBtn variant={'whiteRound'} >
-              <NavLink to={link.url} aria-label="italian">
+              <NavLink to={link.url} aria-label={link.text}>
                 <IconComp as={LinkIcon} />
                 <Text m={'0'} p={'0'} fontSize={'.75rem'}>
                   {link.text}
@@ -48,7 +48,7 @@ export default function SmallNav() {
         :  
         <> 
           <NavLinkBtn variant={'plainRound'} >
-            <NavLink to={link.url} aria-label="italian">
+            <NavLink to={link.url} aria-label={link.text}>
               <IconComp as={LinkIcon} />
             </NavLink>
           </NavLinkBtn>
@@ -60,24 +60,13 @@ export default function SmallNav() {
   
   return (
     <>
-      <Flex
-      m={'0'}
-      p={{base:'.5em', md: '1em'}}
+      <Flex m={'0'} p={{base:'.5em', md: '1em'}}
       >
-      <HStack
-          w={'full'}
-          justify={'space-between'}
-          >
+      <HStack w={'full'} justify={'space-between'}>
         <Link  to={'/'}>
-          <Flex flexDir={'row'} >
-          <Icon as={GiKnifeFork}  color={'black'} h={{ base: '1rem', md: '1.5rem', lg: '1.75rem'}} w={'auto'} />
-          <Heading 
-          as={'h1'} 
-          m={'0'}
-          color={'black'}
-          fontSize={{ base: '1rem', md: '1.5rem', lg: '1.75rem'}}
-          fontWeight={'semibold'}
-          >
+          <Flex flexDir={'row'} _hover={{color: 'brand.redOrange'}}>
+          <Icon as={GiKnifeFork} h={{ base: '1rem', md: '1.5rem', lg: '1.75rem'}} w={'auto'} />
+          <Heading as={'h1'} m={'0'} fontSize={{ base: '1rem', md: '1.5rem', lg: '1.75rem'}} fontWeight={'semibold'}>
             Recipes
           </Heading>        
           </Flex>
@@ -94,17 +83,11 @@ export default function SmallNav() {
             <NavLinkBtn variant={{ base: 'plainRound', md: 'whiteRound'}} >
               <NavLink to={'/favorites'} aria-label="favorites">
                 <IconComp as={IoHeart} />
-                <Text 
-                fontSize={'.75rem'}
-                m={'0'} 
-                p={'0'}
-                display={{ base: 'none', md: 'block'}}
-                >
+                <Text m={'0'} p={'0'} fontSize={'.75rem'} display={{ base: 'none', md: 'block'}}>
                   Favorites
                 </Text>
               </NavLink>
-            </NavLinkBtn>
-            
+            </NavLinkBtn>            
           </HStack>
 
           <Flex maxW={'33%'}>
@@ -112,6 +95,7 @@ export default function SmallNav() {
           </Flex>
           
         </HStack>
+        
       </Flex>  
     </>
   );

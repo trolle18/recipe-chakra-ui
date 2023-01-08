@@ -8,5 +8,4 @@ function SectionCntr(props)  {
     <Flex __css={sectionCntrStyles} {...rest}/>
   )
 };
-
 export default SectionCntr

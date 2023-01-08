@@ -2,7 +2,6 @@ import { Heading } from "@chakra-ui/react";
 import { useEffect, useState } from "react";
 import Carousel from "./Carousel";
 
-
 export default function Popular() {
   const [recipes, setRecipes] = useState([]);
 
@@ -25,11 +24,7 @@ export default function Popular() {
 
   return (
     <>
-      <Heading 
-      as={'h3'} 
-      fontSize={{ base: '1.5rem', md: '2rem'}}
-      fontWeight={'medium'}
-      >
+      <Heading as={'h3'} fontSize={{ base: '1.5rem', md: '2rem'}} fontWeight={'medium'} >
         Popular
       </Heading>
       <Carousel recipes={recipes}/>

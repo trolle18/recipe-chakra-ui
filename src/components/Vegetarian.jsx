@@ -2,7 +2,6 @@ import { Heading } from "@chakra-ui/react";
 import { useEffect, useState } from "react";
 import Carousel from "./Carousel";
 
-
 export default function Vegetarian() {
   const [recipes, setRecipes] = useState([]);
 
@@ -20,17 +19,12 @@ export default function Vegetarian() {
       const data = await api.json();
       localStorage.setItem('veggie', JSON.stringify(data.recipes));  // Recipes are saved to local storage, as Spoonaculars API calls are limited
       setRecipes(data.recipes);
-      // console.log(data);
     }
   }
 
   return (
     <>
-      <Heading 
-      as={'h3'} 
-      fontSize={{ base: '1.5rem', md: '2rem'}}
-      fontWeight={'medium'}
-      >
+      <Heading as={'h3'} fontSize={{ base: '1.5rem', md: '2rem'}} fontWeight={'medium'} >
         Vegetarian
       </Heading>
       <Carousel recipes={recipes}/>
