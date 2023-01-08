@@ -19,29 +19,22 @@ export default function Nav() {
       gap={'1em'}
       boxShadow={'md'}
       bg={'rgba(255, 255, 255, .7)'}
+      zIndex={'100'}
       >
        
-          <Link  to={'/'}>
-            <Flex flexDir={'row'} >
-              <Icon as={GiKnifeFork}  color={'black'} h={{ base: '2rem', md: '2.5rem', lg: '3rem'}} w={'auto'} />
-              <Heading 
-              as={'h1'} 
-              color={'black'}
-              fontSize={{ base: '2rem', md: '2.5rem', lg: '3rem'}}
-              fontWeight={'semibold'}
-              >
-                Recipes
-              </Heading>        
-            </Flex>
-          </Link>
+        <Link  to={'/'}>
+          <Flex flexDir={'row'} _hover={{color: 'brand.redOrange'}}>
+            <Icon as={GiKnifeFork} h={{ base: '2rem', md: '2.5rem', lg: '3rem'}} w={'auto'} />
+            <Heading as={'h1'} fontSize={{ base: '2rem', md: '2.5rem', lg: '3rem'}} fontWeight={'semibold'}>
+              Recipes
+            </Heading>        
+          </Flex>
+        </Link>
 
         <VStack gap={'1em'}>
           <Search/>
           
-          <HStack 
-          w={'full'}
-          justify={'space-between'}
-          >
+          <HStack w={'full'} justify={'space-between'} >
             <Categories/>
           </HStack>
 
@@ -49,10 +42,13 @@ export default function Nav() {
             <NavLink to={'/favorites'} >
               <HStack>
                 <IconComp as={IoHeart} variant={'small'}/>
-                <Text fontSize={'.75rem'} margin={'0'} padding={'0'}>Favorites</Text>
+                <Text fontSize={'.75rem'} margin={'0'} padding={'0'}>
+                  Favorites
+                </Text>
               </HStack>
             </NavLink>
-          </NavLinkBtn>          
+          </NavLinkBtn>    
+
         </VStack>            
       </VStack>    
     </>
