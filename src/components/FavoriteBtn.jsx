@@ -1,4 +1,4 @@
-import { FormControl, Input, InputGroup, Icon, useStyleConfig, IconButton } from "@chakra-ui/react";
+import { FormControl, Icon, useStyleConfig, IconButton } from "@chakra-ui/react";
 import { IoHeart } from "react-icons/io5";
 
 function FavBtn(props)  {
@@ -16,7 +16,6 @@ export default function FavoriteBtn( {recipe} ) {
   function deleteFav(index) {
     var favorites = JSON.parse(localStorage.getItem("favorites"));
     favorites.splice(index, 1);        
-    // console.log(favorites)
   }
 
   function addFav() {        
@@ -63,7 +62,7 @@ export default function FavoriteBtn( {recipe} ) {
 
 
     const toggleFav = () => {
-      const favBtn = document.getElementById("heartIcon")
+      // const favBtn = document.getElementById("submit")
       let present = false ;
 
       favorites.map(val => {
@@ -97,14 +96,12 @@ export default function FavoriteBtn( {recipe} ) {
   return (
     <>
       <FormControl>
-        <InputGroup>       
-          <Input id={recipe.id} type="hidden" value={recipe.id} />
-          <Input id={recipe.title} type="hidden" value={recipe.title} />
-          <Input id={recipe.image} type="hidden" value={recipe.image} />
-          <Input id={recipe.readyInMinutes} type="hidden" value={recipe.readyInMinutes} />
-          <Input id={recipe.servings} type="hidden" value={recipe.servings} />
-          <Input id={recipe.diets} type="hidden" value={recipe.diets} />
-        </InputGroup>
+          <input id={recipe.id} type="hidden" value={recipe.id} />
+          <input id={recipe.title} type="hidden" value={recipe.title} />
+          <input id={recipe.image} type="hidden" value={recipe.image} />
+          <input id={recipe.readyInMinutes} type="hidden" value={recipe.readyInMinutes} />
+          <input id={recipe.servings} type="hidden" value={recipe.servings} />
+          <input id={recipe.diets} type="hidden" value={recipe.diets} />
 
         <FavBtn 
         id="submit"
@@ -112,7 +109,7 @@ export default function FavoriteBtn( {recipe} ) {
         // className="disabled"
         onClick={handleSubmit}        
         icon={<Icon as={IoHeart}/>}
-        />    
+        />
       </FormControl>
     </>
   )
