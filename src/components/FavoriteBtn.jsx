@@ -74,8 +74,7 @@ export default function FavoriteBtn( {recipe} ) {
         // favBtn.classList.remove("disabled")
         // favBtn.classList.add("active")
         deleteFav()
-        // favorites.push(favRecipe)                
-        console.log("The recipe was removed")
+        // console.log("The recipe was removed")
       }            
       if (!present) {                
         // favBtn.classList.add("disabled")
@@ -83,16 +82,15 @@ export default function FavoriteBtn( {recipe} ) {
         localStorage.setItem('recipe', JSON.stringify(favRecipe))
         favorites.push(favRecipe)
         localStorage.setItem("favorites", JSON.stringify(favorites))                
-        console.log("The recipe is saved")
+        // console.log("The recipe is saved")
       }        
     }
     toggleFav()      
   }
 
-
   function handleSubmit(e) {
     e.preventDefault();
-    addFav();
+    addFav();    
   }
 
 
@@ -111,8 +109,8 @@ export default function FavoriteBtn( {recipe} ) {
         <FavBtn 
         id="submit"
         type="submit"
-        onClick={handleSubmit}
         // className="disabled"
+        onClick={handleSubmit}        
         icon={<Icon as={IoHeart}/>}
         />    
       </FormControl>
