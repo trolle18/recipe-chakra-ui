@@ -12,19 +12,7 @@ export default function Search() {
   const handleSubmit = (e) => {
     e.preventDefault();
     navigate('/searched/'+input)
-    console.log('searched')
   };
-
-  // const key = (e) => {
-  //   onKeyPress={(e) => {
-  //     if (e.key === "Enter") {
-  //         this.setState({ message: e.target.value },
-  //         () => {
-  //             alert(this.state.message);
-  //         });
-  //     }
-  // }}
-  // }
 
 
   return (
