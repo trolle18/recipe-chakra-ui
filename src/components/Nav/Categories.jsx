@@ -6,7 +6,6 @@ import { Text } from "@chakra-ui/react";
 import NavLinkBtn from './NavLinkBtn';
 import IconComp from '../IconComp';
 
-
 export default function Categories() {
   const [data, setData] = useState([]);
 
@@ -31,7 +30,7 @@ export default function Categories() {
     return (
       <> 
        <NavLinkBtn variant="blackRound">
-        <NavLink to={link.url} >
+        <NavLink to={link.url} aria-label={link.text}>
             <IconComp as={LinkIcon} />
             <Text fontSize={'.75rem'} margin={'0em'} padding={'0em'} color={'white'}>
               {link.text}

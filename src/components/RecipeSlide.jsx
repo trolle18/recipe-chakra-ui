@@ -5,9 +5,7 @@ import FavoriteBtn from "./FavoriteBtn";
 import { Container, Flex, Heading, Text, Icon } from "@chakra-ui/react";
 import Card from "./Card";
 
-
-export default function RecipeSlide( {recipe} ) {
-
+export default function RecipeSlide({recipe}) {
   function CheckReady()  {
     const readyInMin = recipe.readyInMinutes;
     if (readyInMin) {
@@ -31,6 +29,7 @@ export default function RecipeSlide( {recipe} ) {
     <>
       <Container h={'full'} p={'.5em'}>
         <Link to={'/recipe/'+ recipe.id}>
+
         <Card>
           <Flex
           w={'full'}
@@ -49,7 +48,8 @@ export default function RecipeSlide( {recipe} ) {
               <Heading as={'h4'} fontWeight={'medium'} fontSize={'1.25rem'}>
                 {recipe.title}
               </Heading>
-            </Flex>              
+            </Flex>     
+
             <Flex flexDir={'column'} justify={'space-between'} gap={'.5em'}>
               <Flex flexDir={{ base: 'column', md: 'row'}} justify={'space-between'}>
                 {CheckReady()}
@@ -60,6 +60,7 @@ export default function RecipeSlide( {recipe} ) {
           </Flex>
          
         </Card>
+
         </Link>             
       </Container>
     </>

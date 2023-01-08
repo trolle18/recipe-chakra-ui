@@ -1,6 +1,4 @@
 import { Splide, SplideSlide } from '@splidejs/react-splide';
-// import '@splidejs/react-splide/css';
-// import '@splidejs/splide/css';
 import RecipeSlide from "./RecipeSlide";
 
 
@@ -13,13 +11,16 @@ export default function Carousel({recipes}) {
         width: "100%",
         breakpoints: {
           400: {
-            perPage: 2,
+            perPage: 1,
           },
           600: {
-            perPage: 3,
+            perPage: 2,
           },
           992: {
             perPage: 3,
+          },
+          1440: {
+            perPage: 4,
           },                
         },            
         arrows: false,
