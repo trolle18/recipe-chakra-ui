@@ -98,17 +98,15 @@ export default function FavoriteBtn( {recipe} ) {
 
   return (
     <>
-      <form 
-      // onSubmit={handleSubmit}
-      >
-        {/* <InputGroup>        */}
-          <input id={recipe.id} type="hidden" value={recipe.id} />
-          <input id={recipe.title} type="hidden" value={recipe.title} />
-          <input id={recipe.image} type="hidden" value={recipe.image} />
-          <input id={recipe.readyInMinutes} type="hidden" value={recipe.readyInMinutes} />
-          <input id={recipe.servings} type="hidden" value={recipe.servings} />
-          <input id={recipe.diets} type="hidden" value={recipe.diets} />
-        {/* </InputGroup> */}
+      <FormControl>
+        <InputGroup>       
+          <Input id={recipe.id} type="hidden" value={recipe.id} />
+          <Input id={recipe.title} type="hidden" value={recipe.title} />
+          <Input id={recipe.image} type="hidden" value={recipe.image} />
+          <Input id={recipe.readyInMinutes} type="hidden" value={recipe.readyInMinutes} />
+          <Input id={recipe.servings} type="hidden" value={recipe.servings} />
+          <Input id={recipe.diets} type="hidden" value={recipe.diets} />
+        </InputGroup>
 
         <FavBtn 
         id="submit"
@@ -116,9 +114,8 @@ export default function FavoriteBtn( {recipe} ) {
         onClick={handleSubmit}
         // className="disabled"
         icon={<Icon as={IoHeart}/>}
-        />
-        
-      </form>
+        />    
+      </FormControl>
     </>
   )
 };
