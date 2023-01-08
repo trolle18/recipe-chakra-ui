@@ -19,6 +19,7 @@ export default function Nav() {
       gap={'1em'}
       boxShadow={'md'}
       bg={'rgba(255, 255, 255, .7)'}
+      zIndex={'100'}
       >
        
         <Link  to={'/'}>
@@ -41,7 +42,9 @@ export default function Nav() {
             <NavLink to={'/favorites'} >
               <HStack>
                 <IconComp as={IoHeart} variant={'small'}/>
-                <Text fontSize={'.75rem'} margin={'0'} padding={'0'}>Favorites</Text>
+                <Text fontSize={'.75rem'} margin={'0'} padding={'0'}>
+                  Favorites
+                </Text>
               </HStack>
             </NavLink>
           </NavLinkBtn>    
