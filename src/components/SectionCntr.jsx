@@ -1,6 +1,6 @@
 import { useStyleConfig, Flex } from "@chakra-ui/react";
 
-function SectionCntr(props)  {
+export default function SectionCntr(props)  {
   const { variant, ...rest } = props
   const sectionCntrStyles = useStyleConfig('sectionCntrStyles', {variant});
 
@@ -8,4 +8,3 @@ function SectionCntr(props)  {
     <Flex __css={sectionCntrStyles} {...rest}/>
   )
 };
-export default SectionCntr

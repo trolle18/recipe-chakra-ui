@@ -1,6 +1,6 @@
 import { useStyleConfig, Flex } from "@chakra-ui/react";
 
-function Card(props)  {
+export default function Card(props)  {
   const { variant, ...rest } = props
   const cardStyles = useStyleConfig('cardStyles', {variant});
 
@@ -8,5 +8,3 @@ function Card(props)  {
     <Flex __css={cardStyles} {...rest}/>
   )
 };
-
-export default Card

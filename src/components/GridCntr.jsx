@@ -1,6 +1,6 @@
 import { useStyleConfig, Grid } from "@chakra-ui/react";
 
-function GridCntr(props)  {
+export default function GridCntr(props)  {
   const { variant, ...rest } = props
   const gridCntrStyles = useStyleConfig('gridCntrStyles', {variant});
 
@@ -8,5 +8,3 @@ function GridCntr(props)  {
     <Grid __css={gridCntrStyles} {...rest}/>
   )
 };
-
-export default GridCntr
