@@ -32,7 +32,12 @@ export default function Categories() {
        <NavLinkBtn variant="blackRound">
         <NavLink to={link.url} aria-label={link.text}>
             <IconComp as={LinkIcon} />
-            <Text fontSize={'.75rem'} margin={'0em'} padding={'0em'} color={'white'}>
+            <Text 
+            m={'0em'}
+            p={'0em'}
+            fontSize={{ base:'.75rem', sm: '.75rem', md: '.75rem' }}
+            // color={'white'}
+            >
               {link.text}
             </Text>
         </NavLink>

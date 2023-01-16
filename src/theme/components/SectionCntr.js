@@ -1,7 +1,6 @@
 export const sectionCntrStyles = {
   baseStyle: {
     margin: '2em 1em',
-    // display: 'flex',   
   },
 
   variants: {
@@ -10,7 +9,5 @@ export const sectionCntrStyles = {
       bg: "transparent",
       color: "black",
     },
-
-
   },
 };

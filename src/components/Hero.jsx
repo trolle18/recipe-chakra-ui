@@ -6,19 +6,22 @@ export default function Hero() {
     <>
       <Flex
       w={'full'}
-      h={{ base: '60vh', md: '50vh', lg: '40vh'}}
-      maxH={{ base: '400px', md: '500px', lg: '400px'}}
+      h={'full'}
       backgroundImage={ 'url(/data/heroImg.avif)' }
       backgroundSize={'cover'}
       backgroundPosition={'center center'}
       >
-
-        <Flex h={'full'}w={'full'} bgGradient={'linear(to-r, blackAlpha.600, transparent)'} >
-          <Flex m={'auto'} justify={'center'} alignItems={'center'} verticalAlign={'middle'} >
+        <Flex 
+        h={'full'} 
+        w={'full'}
+        m={'auto'}
+        p={{ base: '2em 0', sm: '2.25em 0', md: '2.5em 0' }}
+        bgGradient={'linear(to-r, blackAlpha.600, transparent)'} 
+        >
+          <Flex m={'auto'}>
             <Nav/> 
           </Flex>
         </Flex>
-
       </Flex>
     </>
   )
