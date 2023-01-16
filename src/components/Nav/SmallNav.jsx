@@ -64,10 +64,10 @@ export default function SmallNav() {
 
           <Link  to={'/'}>
             <Flex flexDir={'row'} _hover={{color: 'brand.redOrange'}}>
-            <Icon as={GiKnifeFork} h={{ base: '1rem', md: '1.5rem', lg: '1.75rem'}} w={'auto'} />
-            <Heading as={'h1'} m={'0'} fontSize={{ base: '1rem', md: '1.5rem', lg: '1.75rem'}} fontWeight={'semibold'}>
-              Recipes
-            </Heading>
+              <Icon as={GiKnifeFork} h={{ base: '1rem', md: '1.5rem', lg: '1.75rem'}} w={'auto'} />
+              <Heading as={'h1'} m={'0'} fontSize={{ base: '1rem', md: '1.5rem', lg: '1.75rem'}} fontWeight={'semibold'}>
+                Recipes
+              </Heading>
             </Flex>
           </Link>
 
@@ -76,7 +76,7 @@ export default function SmallNav() {
               <NavCategory link={link} key={link.id}/>
             ))}
             <NavLinkBtn variant={{ base: 'plainRound', md: 'whiteRound'}} >
-              <NavLink to={'/favorites'} aria-label="favorites" _active={{ base:{color: 'brand.redOrange'}, }}>
+              <NavLink to={'/favorites'} aria-label="favorites" _active={{color: 'brand.redOrange'}} >
                 <IconComp as={IoHeart} />
                 <Text m={'0'} p={'0'} fontSize={'.75rem'} display={{ base: 'none', md: 'block'}} >
                   Favorites
