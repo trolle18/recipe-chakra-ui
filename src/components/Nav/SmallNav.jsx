@@ -60,17 +60,17 @@ export default function SmallNav() {
   
   return (
     <>
-      <Flex m={'0'} p={{base:'.5em', md: '1em'}}
-      >
-      <HStack w={'full'} justify={'space-between'}>
-        <Link  to={'/'}>
-          <Flex flexDir={'row'} _hover={{color: 'brand.redOrange'}}>
-          <Icon as={GiKnifeFork} h={{ base: '1rem', md: '1.5rem', lg: '1.75rem'}} w={'auto'} />
-          <Heading as={'h1'} m={'0'} fontSize={{ base: '1rem', md: '1.5rem', lg: '1.75rem'}} fontWeight={'semibold'}>
-            Recipes
-          </Heading>        
-          </Flex>
-        </Link>
+      <Flex m={'0'} p={{base:'.5em', md: '1em'}}>
+        <HStack w={'full'} justify={'space-between'}>
+
+          <Link  to={'/'}>
+            <Flex flexDir={'row'} _hover={{color: 'brand.redOrange'}}>
+            <Icon as={GiKnifeFork} h={{ base: '1rem', md: '1.5rem', lg: '1.75rem'}} w={'auto'} />
+            <Heading as={'h1'} m={'0'} fontSize={{ base: '1rem', md: '1.5rem', lg: '1.75rem'}} fontWeight={'semibold'}>
+              Recipes
+            </Heading>        
+            </Flex>
+          </Link>
 
           <HStack
           w={'full'}
@@ -78,8 +78,9 @@ export default function SmallNav() {
           justify={'flex-end'}
           gap={{base: '1em', md: '1em'}}
           >
-            {data.map((link) => ( <NavCategory link={link} /> ))}  
-
+            {data.map((link) => ( 
+              <NavCategory link={link} key={link.id}/> 
+            ))}  
             <NavLinkBtn variant={{ base: 'plainRound', md: 'whiteRound'}} >
               <NavLink to={'/favorites'} aria-label="favorites">
                 <IconComp as={IoHeart} />
@@ -93,9 +94,8 @@ export default function SmallNav() {
           <Flex maxW={'33%'}>
             <Search/>
           </Flex>
-          
-        </HStack>
-        
+            
+        </HStack>        
       </Flex>  
     </>
   );

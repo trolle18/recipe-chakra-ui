@@ -44,7 +44,7 @@ export default function Categories() {
   return (
     <>
       {data.map((link) => (
-        <NavCategory link={link} />
+        <NavCategory link={link} key={link.id}/>
       ))}  
     </>
   )
