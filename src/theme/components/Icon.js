@@ -1,7 +1,7 @@
 export const iconStyles = {
   sizes: {
     sm: {
-      height: "1em",
+      height: ".75em",
       width: "auto",
     },
     md: {
@@ -15,7 +15,8 @@ export const iconStyles = {
   },
   
   baseStyle: {
-    height: {base: '1em', sm: '1.25em', md: '1.5em'},
+    height: '1em',
+    // {base: '1em', sm: '.75em', md: '1em'},
     width: 'auto',
   },
   variants: {

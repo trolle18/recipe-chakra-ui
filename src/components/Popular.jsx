@@ -14,7 +14,7 @@ export default function Popular() {
     const check = localStorage.getItem('popular');  // Checks if recipes is saved in local storage
     if (check) {
       setRecipes(JSON.parse(check));
-    } else {  // If not, get from API and save to local storage    
+    } else {  // If not, get from API and save to local storage
       const api = await fetch(`https://api.spoonacular.com/recipes/random?apiKey=${process.env.REACT_APP_API_KEY}&number=9`);
       const data = await api.json();
       localStorage.setItem('popular', JSON.stringify(data.recipes));  // Recipes are saved to local storage, as Spoonaculars API calls are limited

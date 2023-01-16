@@ -1,7 +1,6 @@
 import {  Flex, useMultiStyleConfig } from "@chakra-ui/react";
 
-
-function NavLinkBtn(props)  {
+export default function NavLinkBtn(props)  {
 	const { variant, ...rest } = props
 	const navLinkBtnStyles = useMultiStyleConfig('navLinkBtnStyles', {variant});
 
@@ -9,5 +8,3 @@ function NavLinkBtn(props)  {
 		<Flex __css={navLinkBtnStyles} {...rest}></Flex>
 	)
 };
-
-export default NavLinkBtn

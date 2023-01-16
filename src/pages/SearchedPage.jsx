@@ -6,7 +6,6 @@ import SectionCntr from '../components/SectionCntr';
 import SmallNav from '../components/Nav/SmallNav';
 import RecipeSlide from '../components/RecipeSlide';
 
-
 export default function SearchedPage() {
   const [searchedRecipes, setSearchedRecipes] = useState([]);
   let params = useParams();
@@ -28,7 +27,6 @@ export default function SearchedPage() {
     getSearched(params.search)
   }, [params.search]);
 
-
   return (
     <>
       <SmallNav/>
@@ -37,7 +35,6 @@ export default function SearchedPage() {
         as={'h2'} 
         fontSize={{ base: '1.5rem', md: '1.75rem'}}
         fontWeight={'medium'}
-        // textTransform={'capitalize'}
         >
           Search results for "{params?.search}"
         </Heading>    

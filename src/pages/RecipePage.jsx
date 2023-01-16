@@ -5,8 +5,7 @@ import { useParams } from "react-router-dom";
 import SmallNav from "../components/Nav/SmallNav";
 import SectionCntr from "../components/SectionCntr";
 
-
-function RecipePage() {
+export default function RecipePage() {
   let params = useParams();
   const [details, setDetails] = useState({});
   const [activeTab, setActiveTab] = useState("instructions");
@@ -16,13 +15,11 @@ function RecipePage() {
     const api = await fetch(`https://api.spoonacular.com/recipes/${params.name}/information?apiKey=${process.env.REACT_APP_API_KEY}`);
     const detailData = await api.json();
     setDetails(detailData);
-    // console.log(detailData);
   };
 
   useEffect(() => {
     fetchDetails();
   }, [params.name]);
-
 
   return (
     <>
@@ -108,6 +105,4 @@ function RecipePage() {
       </SectionCntr>
     </>
   )
-}
-
-export default RecipePage
+};

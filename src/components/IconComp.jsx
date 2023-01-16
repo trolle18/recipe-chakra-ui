@@ -1,6 +1,6 @@
 import { useStyleConfig, Icon } from "@chakra-ui/react";
 
-function IconComp(props)  {
+export default function IconComp(props)  {
   const { variant, ...rest } = props
   const iconStyles = useStyleConfig('iconStyles', {variant});
 
@@ -8,5 +8,3 @@ function IconComp(props)  {
     <Icon __css={iconStyles} {...rest}/>
   )
 };
-
-export default IconComp

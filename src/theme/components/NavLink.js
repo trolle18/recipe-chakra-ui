@@ -1,4 +1,10 @@
 export const navLinkBtnStyles = {
+  sizes: {
+    sm: { height: '2em', width: '3em'},
+    md: { height: '4em', width: '4em'},
+    lg: { height: '5em', width: '5em'},
+  },
+
   baseStyle: {
     display: 'flex',
     justifyContent: 'center',
@@ -6,6 +12,12 @@ export const navLinkBtnStyles = {
     cursor: 'pointer',
     textAlign: 'center',
     textDecoration: 'none', 
+    bg: "transparent",
+    color: "#000", 
+    _hover: { color: "brand.redOrange" },
+    _focus: { color: "brand.redOrange" },
+    _active: { color: "brand.redOrange" },
+
   },
 
   variants: {
@@ -20,7 +32,6 @@ export const navLinkBtnStyles = {
 
     black: {
       flexDirection: 'column',
-      borderRadius: '50%',
       color: "#000",
       _hover: { color: "brand.redOrange" },
       _focus: { color: "brand.redOrange" },
@@ -28,7 +39,6 @@ export const navLinkBtnStyles = {
     },
     white: {
       flexDirection: 'column',
-      borderRadius: '50%',
       color: "#fff",
       _hover: { color: "brand.redOrange" },
       _focus: { color: "brand.redOrange" },
@@ -36,17 +46,27 @@ export const navLinkBtnStyles = {
     },
 
     blackRound: {
-      height: {base: '4em', sm: '4em', md: '5em'},
-      width: {base: '4em', sm: '4em', md: '5em'},
-      padding: '.5em',
+      height: {base:'3em', sm:'4em', md:'5em'},
+      width: {base:'3em', sm:'4em', md:'5em'},
+      padding: {base:'.5em .25em', sm:'.5em', md:'.5em'},
       flexDirection: 'column',
       borderRadius: '50em',
-      bg: "#000",
-      color: "white",
-      _hover: { bg: "brand.redOrange" },
-      _focus: { bg: "brand.redOrange" },
-      _active: { bg: "brand.redOrange" },
+      bg: {base:'transparent', sm:'#000' },
+      color: {base:'black', sm:'white'},
+      _focus: {
+        bg:{ base:'transparent', sm:"brand.redOrange" },
+        color: { base:'brand.redOrange', sm:'white'}
+      },
+      _active: {
+        bg:{ base:'transparent', sm:"brand.redOrange" },
+        color: { base:'brand.redOrange', sm:'white'}
+       },
+      _hover: {
+       bg:{ base:'transparent', sm:"brand.redOrange" },
+       color: { base:'brand.redOrange', sm:'white'}
+      },      
     },
+
     whiteRound: {
       width: '4em',
       height: '4em',
@@ -55,9 +75,9 @@ export const navLinkBtnStyles = {
       borderRadius: '50%',
       bg: "white",
       color: "black",
-      _hover: { color: "brand.redOrange"},
-      _focus: { color: "brand.redOrange" },
-      _active: { color: "brand.redOrange"},
+      _hover: {color: "brand.redOrange"},
+      _focus: {color: "brand.redOrange" },
+      _active: {color: "brand.redOrange"},
     },
     plainRound: {
       width: 'auto',

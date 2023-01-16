@@ -6,7 +6,6 @@ import RecipeSlide from '../components/RecipeSlide';
 import { Flex, Heading } from '@chakra-ui/react';
 import SectionCntr from '../components/SectionCntr';
 
-
 export default function CuisinePage() {
   const [cuisines, setCuisines] = useState([]);
   let params = useParams();
@@ -27,7 +26,6 @@ export default function CuisinePage() {
   useEffect(() => {
     getCuisine(params.type)
   }, [params.type]);
-
 
   return (
     <>
@@ -70,4 +68,4 @@ export default function CuisinePage() {
       </SectionCntr>
     </>
   )
-}
+};

@@ -8,7 +8,6 @@ import Search from "../Search";
 import NavLinkBtn from "./NavLinkBtn";
 import IconComp from "../IconComp";
 
-
 export default function SmallNav() {
   const [data, setData] = useState([]);
 
@@ -16,9 +15,9 @@ export default function SmallNav() {
     async function getData() {
         const response = await fetch("/data/navData.json");
         const data = await response.json();
-        setData(data);             
-    }       
-      getData();        
+        setData(data);
+    }
+      getData();
   }, []);
 
   const Icons = {
@@ -33,9 +32,9 @@ export default function SmallNav() {
     const { [link.icon]: LinkIcon } = Icons
     return (
       <>
-        {isLargerThanMD 
-        ? 
-          <> 
+        {isLargerThanMD
+        ?
+          <>
             <NavLinkBtn variant={'whiteRound'} >
               <NavLink to={link.url} aria-label={link.text}>
                 <IconComp as={LinkIcon} />
@@ -45,8 +44,8 @@ export default function SmallNav() {
               </NavLink>
             </NavLinkBtn>
           </>
-        :  
-        <> 
+        :
+        <>
           <NavLinkBtn variant={'plainRound'} >
             <NavLink to={link.url} aria-label={link.text}>
               <IconComp as={LinkIcon} />
@@ -57,46 +56,41 @@ export default function SmallNav() {
       </>
     )
   }
-  
+
   return (
     <>
-      <Flex m={'0'} p={{base:'.5em', md: '1em'}}
-      >
-      <HStack w={'full'} justify={'space-between'}>
-        <Link  to={'/'}>
-          <Flex flexDir={'row'} _hover={{color: 'brand.redOrange'}}>
-          <Icon as={GiKnifeFork} h={{ base: '1rem', md: '1.5rem', lg: '1.75rem'}} w={'auto'} />
-          <Heading as={'h1'} m={'0'} fontSize={{ base: '1rem', md: '1.5rem', lg: '1.75rem'}} fontWeight={'semibold'}>
-            Recipes
-          </Heading>        
-          </Flex>
-        </Link>
+      <Flex m={'0'} p={{base:'.5em', md: '1em'}}>
+        <HStack w={'full'} justify={'space-between'}>
 
-          <HStack
-          w={'full'}
-          alignSelf={'center'}
-          justify={'flex-end'}
-          gap={{base: '1em', md: '1em'}}
-          >
-            {data.map((link) => ( <NavCategory link={link} /> ))}  
+          <Link  to={'/'}>
+            <Flex flexDir={'row'} _hover={{color: 'brand.redOrange'}}>
+              <Icon as={GiKnifeFork} h={{ base: '1rem', md: '1.5rem', lg: '1.75rem'}} w={'auto'} />
+              <Heading as={'h1'} m={'0'} fontSize={{ base: '1rem', md: '1.5rem', lg: '1.75rem'}} fontWeight={'semibold'}>
+                Recipes
+              </Heading>
+            </Flex>
+          </Link>
 
+          <HStack w={'full'} alignSelf={'center'} justify={'flex-end'} gap={{base: '1em', md: '1em'}}>
+            {data.map((link) => (
+              <NavCategory link={link} key={link.id}/>
+            ))}
             <NavLinkBtn variant={{ base: 'plainRound', md: 'whiteRound'}} >
-              <NavLink to={'/favorites'} aria-label="favorites">
+              <NavLink to={'/favorites'} aria-label="favorites" _active={{color: 'brand.redOrange'}} >
                 <IconComp as={IoHeart} />
-                <Text m={'0'} p={'0'} fontSize={'.75rem'} display={{ base: 'none', md: 'block'}}>
+                <Text m={'0'} p={'0'} fontSize={'.75rem'} display={{ base: 'none', md: 'block'}} >
                   Favorites
                 </Text>
               </NavLink>
-            </NavLinkBtn>            
+            </NavLinkBtn>
           </HStack>
 
-          <Flex maxW={'33%'}>
+          <Flex maxW={'33%'} display={{ base: 'none', sm: 'block'}} >
             <Search/>
           </Flex>
-          
+
         </HStack>
-        
-      </Flex>  
+      </Flex>
     </>
-  );
+  )
 };
