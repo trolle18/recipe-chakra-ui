@@ -40,28 +40,27 @@ export default function RecipeSlide({recipe}) {
           >
             <Flex w={'max-content'} h={'max-content'} marginLeft={'auto'} p={'.5em'} zIndex={'90'}  >
               <FavoriteBtn recipe={recipe}/>
-            </Flex>            
-          </Flex>             
-          
+            </Flex>
+          </Flex>
+
           <Flex p={'.5em'} flexDir={'column'} gap={'.25em'}>
             <Flex w={'full'}>
               <Heading as={'h4'} fontWeight={'medium'} fontSize={'1.25rem'}>
                 {recipe.title}
               </Heading>
-            </Flex>     
+            </Flex>
 
             <Flex flexDir={'column'} justify={'space-between'} gap={'.5em'}>
               <Flex flexDir={{ base: 'column', md: 'row'}} justify={'space-between'}>
                 {CheckReady()}
                 {CheckServings()}
-              </Flex>                
+              </Flex>
               {CheckDiets()}
-            </Flex>                           
+            </Flex>
           </Flex>
-         
         </Card>
 
-        </Link>             
+        </Link>
       </Container>
     </>
   )

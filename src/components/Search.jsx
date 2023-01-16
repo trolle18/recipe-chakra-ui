@@ -13,7 +13,6 @@ export default function Search() {
     navigate('/searched/'+input)
   };
 
-
   return (
     <form onSubmit={handleSubmit} >
       <InputGroup bg={'white'} borderRadius={'50%'}>

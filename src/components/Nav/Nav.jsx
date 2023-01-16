@@ -7,9 +7,7 @@ import { Heading, HStack, Icon, Text, VStack, Flex } from "@chakra-ui/react";
 import NavLinkBtn from "./NavLinkBtn";
 import IconComp from "../IconComp";
 
-
 export default function Nav() {
-
   return (
     <>
       <VStack
@@ -21,19 +19,19 @@ export default function Nav() {
       bg={'rgba(255, 255, 255, .7)'}
       zIndex={'100'}
       >
-       
+
         <Link  to={'/'}>
           <Flex flexDir={'row'} _hover={{color: 'brand.redOrange'}}>
             <Icon as={GiKnifeFork} h={{ base: '2rem', md: '2.5rem', lg: '3rem'}} w={'auto'} />
             <Heading as={'h1'} fontSize={{ base: '2rem', md: '2.5rem', lg: '3rem'}} fontWeight={'semibold'}>
               Recipes
-            </Heading>        
+            </Heading>
           </Flex>
         </Link>
 
         <VStack gap={'1em'}>
           <Search/>
-          
+
           <HStack w={'full'} justify={'space-between'} >
             <Categories/>
           </HStack>
@@ -47,10 +45,10 @@ export default function Nav() {
                 </Text>
               </HStack>
             </NavLink>
-          </NavLinkBtn>    
+          </NavLinkBtn>
 
-        </VStack>            
-      </VStack>    
+        </VStack>
+      </VStack>
     </>
-  );
+  )
 };

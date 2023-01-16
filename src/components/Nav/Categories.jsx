@@ -13,9 +13,9 @@ export default function Categories() {
     async function getData() {
         const response = await fetch("/data/navData.json");
         const data = await response.json();
-        setData(data);             
-    }       
-      getData();        
+        setData(data);
+    }
+      getData();
   }, []);
 
   const Icons = {
@@ -24,11 +24,11 @@ export default function Categories() {
     "GiNoodles": GiNoodles,
     "GiSushis": GiSushis
   }
-  
+
   function NavCategory({link}) {
     const { [link.icon]: LinkIcon } = Icons
     return (
-      <> 
+      <>
        <NavLinkBtn variant="blackRound">
         <NavLink to={link.url} aria-label={link.text}>
             <IconComp as={LinkIcon} />
@@ -45,7 +45,7 @@ export default function Categories() {
     <>
       {data.map((link) => (
         <NavCategory link={link} key={link.id}/>
-      ))}  
+      ))}
     </>
   )
 };

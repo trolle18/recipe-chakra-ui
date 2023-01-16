@@ -5,22 +5,18 @@ function FavBtn(props)  {
 	const { variant, ...rest } = props
 	const favBtnStyles = useStyleConfig('favBtnStyles', {variant});
 
-	return (
-		<IconButton __css={favBtnStyles} {...rest} />
-	)
-};
+	return <IconButton __css={favBtnStyles} {...rest} />
+}
 
-
-export default function FavoriteBtn( {recipe} ) {   
-
+export default function FavoriteBtn( {recipe} ) {
   function deleteFav(index) {
     var favorites = JSON.parse(localStorage.getItem("favorites"));
-    favorites.splice(index, 1);        
+    favorites.splice(index, 1);
   }
 
-  function addFav() {        
+  function addFav() {
     var favorites = JSON.parse(localStorage.getItem("favorites")); // Parse the JSON stored in all Favorites
-    if(favorites == null) favorites = []; // Create array, if it doesnt excist  
+    if(favorites == null) favorites = []; // Create array, if it doesnt excist
 
     var id = document.getElementById(recipe.id).value;
     var title = document.getElementById(recipe.title).value;
@@ -30,25 +26,13 @@ export default function FavoriteBtn( {recipe} ) {
     var diets = document.getElementById(recipe.diets);
 
     function checkReady() {
-      if(readyInMinutes) {
-        return readyInMinutes
-      } else {
-        return ("")
-      }
+      if(readyInMinutes) { return readyInMinutes } 
     }
     function checkServings() {
-      if(servings) {
-        return servings
-      } else {
-        return ("")
-      }
+      if(servings) { return servings } 
     }
     function checkDiets() {
-      if(diets) {
-        return diets
-      } else {
-        return ("")
-      }
+      if(diets) { return diets }
     }
 
     var favRecipe = {
@@ -62,36 +46,29 @@ export default function FavoriteBtn( {recipe} ) {
 
 
     const toggleFav = () => {
-      // const favBtn = document.getElementById("submit")
       let present = false ;
 
-      favorites.map(val => {
+      favorites.map((val) => {
         if(JSON.stringify( {...val})===JSON.stringify({...favRecipe}) )
         present = true;
       })
+      
       if(present) {
-        // favBtn.classList.remove("disabled")
-        // favBtn.classList.add("active")
         deleteFav()
-        // console.log("The recipe was removed")
-      }            
-      if (!present) {                
-        // favBtn.classList.add("disabled")
-        // favBtn.classList.remove("active")
+      }
+      if (!present) {
         localStorage.setItem('recipe', JSON.stringify(favRecipe))
         favorites.push(favRecipe)
-        localStorage.setItem("favorites", JSON.stringify(favorites))                
-        // console.log("The recipe is saved")
-      }        
+        localStorage.setItem("favorites", JSON.stringify(favorites))
+      }
     }
-    toggleFav()      
+    toggleFav()
   }
 
   function handleSubmit(e) {
     e.preventDefault();
-    addFav();    
+    addFav();
   }
-
 
   return (
     <>
@@ -103,11 +80,10 @@ export default function FavoriteBtn( {recipe} ) {
           <input id={recipe.servings} type="hidden" value={recipe.servings} />
           <input id={recipe.diets} type="hidden" value={recipe.diets} />
 
-        <FavBtn 
+        <FavBtn
         id="submit"
         type="submit"
-        // className="disabled"
-        onClick={handleSubmit}        
+        onClick={handleSubmit}
         icon={<Icon as={IoHeart}/>}
         />
       </FormControl>

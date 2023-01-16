@@ -3,7 +3,7 @@ import { IoHeart } from "react-icons/io5"
 
 
 export default function CheckBtn() {
-  const HeartCheckbox = (props) => {    
+  const HeartCheckbox = (props) => {
     const { state, getCheckboxProps, getInputProps, htmlProps } = useCheckbox(props)
     return (
       <chakra.label
@@ -19,7 +19,7 @@ export default function CheckBtn() {
       {...htmlProps}
       >
         <input {...getInputProps()} hidden />
-        
+
         <Flex {...getCheckboxProps()} >
           <Icon
           as={IoHeart}

@@ -1,6 +1,5 @@
 import { Flex } from "@chakra-ui/react";
 import Nav from "./Nav/Nav";
-// import heroImg from "../../public/data/heroImg.avif"
 
 export default function Hero() {
   return (
@@ -22,5 +21,5 @@ export default function Hero() {
 
       </Flex>
     </>
-  );
+  )
 };
