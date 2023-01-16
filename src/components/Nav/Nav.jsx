@@ -12,7 +12,6 @@ export default function Nav() {
     <>
       <VStack
       minW={'40%'} maxW={'500px'}
-      m={{ base: '.25em'}}
       p={{ base: '.5em', sm: '.75em .5em' }}
       borderRadius={'.25em'}
       gap={'1em'}
@@ -33,7 +32,7 @@ export default function Nav() {
         <VStack gap={'1em'}>
           <Search/>
 
-          <HStack w={'full'} justify={'space-between'} p={'.5em 0'}>
+          <HStack w={'full'} p={'.5em 0'} justify={'space-between'}>
             <Categories/>
           </HStack>
 
@@ -47,8 +46,8 @@ export default function Nav() {
               </HStack>
             </NavLink>
           </NavLinkBtn>
-
         </VStack>
+
       </VStack>
     </>
   )
