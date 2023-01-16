@@ -17,8 +17,8 @@ export function HomePage() {
       display={'flex'}
       flexDir={'column'}
       >
-        <SectionCntr>                
-          <motion.div 
+        <SectionCntr>
+          <motion.div
           animate={ {opacity: 1} }
           initial={ {opacity: 0} }
           exit={ {opacity: 0} }
@@ -28,8 +28,8 @@ export function HomePage() {
           </motion.div>
         </SectionCntr>
 
-        <SectionCntr>                
-          <motion.div 
+        <SectionCntr>
+          <motion.div
           animate={ {opacity: 1} }
           initial={ {opacity: 0} }
           exit={ {opacity: 0} }
@@ -38,19 +38,7 @@ export function HomePage() {
             <Vegetarian/>
           </motion.div>
         </SectionCntr>
-
-        {/* <SectionCntr>                
-          <motion.div 
-          animate={ {opacity: 1} }
-          initial={ {opacity: 0} }
-          exit={ {opacity: 0} }
-          transition={ {duration: 0.5} }
-          >
-              <Favorites /> 
-          </motion.div>
-        </SectionCntr> */}
-
       </Flex>
     </>
   )
-}
+};

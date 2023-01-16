@@ -37,7 +37,6 @@ export default function SearchedPage() {
         as={'h2'} 
         fontSize={{ base: '1.5rem', md: '1.75rem'}}
         fontWeight={'medium'}
-        // textTransform={'capitalize'}
         >
           Search results for "{params?.search}"
         </Heading>    

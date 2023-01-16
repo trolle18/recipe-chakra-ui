@@ -1,11 +1,9 @@
-// import { Route, Routes } from 'react-router-dom';
 import { Navigate, Route, Routes } from 'react-router-dom';
 import CuisinePage from "./CuisinePage"
 import FavoritesPage from './FavoritesPage';
 import { HomePage } from './HomePage';
 import SearchedPage from './SearchedPage';
 import RecipePage from './RecipePage';
-
 
 export default function PageRouter() {
   return(
@@ -20,4 +18,4 @@ export default function PageRouter() {
         </Routes>
     </>
   )
-}
+};
