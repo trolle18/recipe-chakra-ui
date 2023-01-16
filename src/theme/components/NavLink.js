@@ -1,4 +1,10 @@
 export const navLinkBtnStyles = {
+  sizes: {
+    sm: { height: '2em', width: '3em'},
+    md: { height: '4em', width: '4em'},
+    lg: { height: '5em', width: '5em'},
+  },
+  
   baseStyle: {
     display: 'flex',
     justifyContent: 'center',
