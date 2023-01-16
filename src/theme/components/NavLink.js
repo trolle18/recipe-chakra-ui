@@ -36,17 +36,20 @@ export const navLinkBtnStyles = {
     },
 
     blackRound: {
-      height: {base: '3em', sm: '4em', md: '5em'},
-      width: {base: '3em', sm: '4em', md: '5em'},
-      padding: {base:'.5em .25em', sm: '.5em', md: '.5em'},
+      height: {base:'3em', sm:'4em', md:'5em'},
+      width: {base:'3em', sm:'4em', md:'5em'},
+      padding: {base:'.5em .25em', sm:'.5em', md:'.5em'},
       flexDirection: 'column',
       borderRadius: '50em',
-      bg: {base: 'transparent', sm: '#000' },
-      // fontWeight: {base: '500', sm: '400'},
-      color: {base: 'black', sm: 'white'},
-      _hover: { bg: "brand.redOrange" },
-      _focus: { bg: "brand.redOrange" },
-      _active: { bg: "brand.redOrange" },
+      bg: {base:'transparent', sm:'#000' },
+      color: {base:'black', sm:'white'},
+      _focus: { bg:"brand.redOrange" },
+      _active: { bg:"brand.redOrange" },
+      _hover: {
+       bg:{ base:'transparent', sm:"brand.redOrange" },
+       color: { base:'brand.redOrange', sm:'white'}
+      },
+      
     },
 
     whiteRound: {
