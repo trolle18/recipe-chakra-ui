@@ -71,26 +71,21 @@ export default function SmallNav() {
             </Flex>
           </Link>
 
-          <HStack
-          w={'full'}
-          alignSelf={'center'}
-          justify={'flex-end'}
-          gap={{base: '1em', md: '1em'}}
-          >
+          <HStack w={'full'} alignSelf={'center'} justify={'flex-end'} gap={{base: '1em', md: '1em'}}>
             {data.map((link) => (
               <NavCategory link={link} key={link.id}/>
             ))}
             <NavLinkBtn variant={{ base: 'plainRound', md: 'whiteRound'}} >
-              <NavLink to={'/favorites'} aria-label="favorites">
+              <NavLink to={'/favorites'} aria-label="favorites" _active={{ base:{color: 'brand.redOrange'}, }}>
                 <IconComp as={IoHeart} />
-                <Text m={'0'} p={'0'} fontSize={'.75rem'} display={{ base: 'none', md: 'block'}}>
+                <Text m={'0'} p={'0'} fontSize={'.75rem'} display={{ base: 'none', md: 'block'}} >
                   Favorites
                 </Text>
               </NavLink>
             </NavLinkBtn>
           </HStack>
 
-          <Flex maxW={'33%'}>
+          <Flex maxW={'33%'} display={{ base: 'none', sm: 'block'}} >
             <Search/>
           </Flex>
 

@@ -29,15 +29,13 @@ export default function Categories() {
     const { [link.icon]: LinkIcon } = Icons
     return (
       <>
-       <NavLinkBtn variant="blackRound">
+       <NavLinkBtn variant="blackRound" _active={{color: 'brand.redOrange'}}>
         <NavLink to={link.url} aria-label={link.text}>
             <IconComp as={LinkIcon} />
             <Text 
             m={'0em'}
             p={'0em'}
-            fontSize={{ base:'.75rem', sm: '.75rem', md: '.75rem' }}
-            // color={'white'}
-            >
+            fontSize={{ base:'.75rem', sm: '.75rem', md: '.75rem' }}>
               {link.text}
             </Text>
         </NavLink>
