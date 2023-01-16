@@ -5,7 +5,6 @@ import { useParams } from "react-router-dom";
 import SmallNav from "../components/Nav/SmallNav";
 import SectionCntr from "../components/SectionCntr";
 
-
 export default function RecipePage() {
   let params = useParams();
   const [details, setDetails] = useState({});
@@ -21,7 +20,6 @@ export default function RecipePage() {
   useEffect(() => {
     fetchDetails();
   }, [params.name]);
-
 
   return (
     <>

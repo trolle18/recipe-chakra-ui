@@ -5,7 +5,6 @@ import { motion } from "framer-motion";
 import SectionCntr from '../components/SectionCntr';
 import { Flex } from '@chakra-ui/react';
 
-
 export function HomePage() {
   return (
     <>

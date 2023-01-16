@@ -6,7 +6,6 @@ import SectionCntr from '../components/SectionCntr';
 import SmallNav from '../components/Nav/SmallNav';
 import RecipeSlide from '../components/RecipeSlide';
 
-
 export default function SearchedPage() {
   const [searchedRecipes, setSearchedRecipes] = useState([]);
   let params = useParams();
@@ -27,7 +26,6 @@ export default function SearchedPage() {
   useEffect(() => {
     getSearched(params.search)
   }, [params.search]);
-
 
   return (
     <>

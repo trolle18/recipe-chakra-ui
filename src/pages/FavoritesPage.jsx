@@ -6,7 +6,6 @@ import SectionCntr from '../components/SectionCntr';
 import { Flex, Heading } from '@chakra-ui/react';
 import RecipeSlide from '../components/RecipeSlide';
 
-
 export default function FavoritesPage() {
   let [favorites, setFavorites] = useState([]);
   let params = useParams();
@@ -20,7 +19,6 @@ export default function FavoritesPage() {
   useEffect(() => {
     getFavorites();
   }, [params.name]);
-
 
   return (
     <>
